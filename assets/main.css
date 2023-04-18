@@ -10,47 +10,43 @@ body {
 .select {
     width: 100vw;
     height: 50vh;
+    cursor: pointer;
 }
 
 #back2077 {
     background-image: url("../img/back-2077.jpg");
     background-position: center;
     background-size: cover;
-    transition: .3s;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-#back2077:hover {
-    transform: scale(1.2);
-    margin-top: 30px;
-    transition: .5s;
 }
 
 #backedgerunners {
     background-image: url("../img/back-edgerunners.jpg");
     background-position: center;
     background-size: cover;
-    transition: .3s;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-#backedgerunners:hover {
-    transform: scale(1.2);
-    margin-bottom: 30px;
-    transition: .5s;
+.logo {
+    display: flex;
+    flex-direction: column;
 }
 
-.logo {
-    padding: 20px;
-    background-color: rgba(53, 53, 53, 0.456);
+.resumo {
+    width: 200px;
+    background-color: white;
+    visibility: hidden;
+    height: 30vh;
 }
 
 .imglogo {
+    transition: .3s;
     width: 200px;
+    margin-top: 25vh;
 }
