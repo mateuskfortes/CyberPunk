@@ -1,4 +1,4 @@
-/*@keyframes glitch-anim-1 {
+@keyframes glitch-anim-1 {
     0% {
         -webkit-clip-path: polygon(0 2%,100% 2%,100% 5%,0 5%);
         clip-path: polygon(0 2%,100% 2%,100% 5%,0 5%);
@@ -133,32 +133,34 @@
     }
 }
 
-@supports (clip-path: polygon(0 2%,100% 2%,100% 5%,0 5%)) {
-    .btn-preorder:hover .btn-preorder--glitch,.btn-preorder:hover .btn-preorder__text:after {
-        animation-direction:alternate;
-        animation-duration: 2s;
-        animation-iteration-count: infinite;
-        animation-name: glitch-anim-1;
-        animation-timing-function: linear;
-        display: block
-    }
+svg:hover {
+    animation-direction:alternate;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-name: glitch-anim-1;
+    animation-timing-function: linear;
+    display: block
 }
-*/
 
 * {
     padding: 0;
     margin: 0;
 }
 
-body {
-    overflow: hidden;
+header {
+    display: flex;
+}
+
+#fundo {
+    position: fixed;
+    z-index: -1;
 }
 
 .select {
     border: none;
     width: 100vw;
     height: 50vh;
-    cursor: pointer;
+    cursor: pointer;   
 }
 
 #back2077 {
@@ -197,4 +199,20 @@ body {
     transition: .3s;
     width: 200px;
     margin-top: 25vh;
+}
+
+#conteudo {
+    position: absolute;
+    top: 100vh;
+    background-color: rgb(0, 0, 0);
+}
+
+#conteudo::before {
+    content: "";
+    display: inline-block;
+    height: 50px;
+    width: 100%;
+    position: absolute;
+    top: -35px;
+    background-image: url(../img/divisao.svg);
 }
