@@ -134,86 +134,60 @@
     }
 }
 
-svg:hover {
-    animation-direction:alternate;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-    animation-name: glitch-anim-1;
-    animation-timing-function: linear;
-    display: block
-}
-
 * {
     padding: 0;
-    margin: 0;
+    margin: 5px;
+    border: 1px solid black;
+    text-decoration: none;
+}
+
+@font-face {
+    font-family: 'blender';
+    src: url('../fonts/blenderprobold.otf') format('truetype');
+  }
+  
+
+button {
+    display: block;
 }
 
 header {
     display: flex;
-}
-
-#fundo {
-    position: fixed;
-    z-index: -1;
-}
-
-.select {
-    border: none;
-    width: 100vw;
-    height: 50vh;
-    cursor: pointer;   
-}
-
-#back2077 {
-    background-image: url("../img/back-2077.jpg");
-    background-position: center;
-    background-size: cover;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#backedgerunners {
-    background-image: url("../img/back-edgerunners.jpg");
-    background-position: center;
-    background-size: cover;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.logo {
-    display: flex;
     flex-direction: column;
 }
 
-.resumo {
-    width: 200px;
-    background-color: white;
-    visibility: hidden;
-    height: 30vh;
+img {
+    width: 20rem;
+    height: 5rem;
+    display: block;
 }
 
-.imglogo {
-    transition: .3s;
-    width: 200px;
-    margin-top: 25vh;
+a {
+    background-image: url(../img/botao.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    font-family: 'blender', Arial, Helvetica, sans-serif;
+    list-style: none;
+    padding: .8rem 2.7rem;
+    font-size: 1rem;
+    position: relative;
+    margin: auto;
 }
 
-#conteudo {
+.saibamais {
+    background-image: url(../img/botao.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
     position: absolute;
-    top: 100vh;
-    background-color: #f3e600;
-}
-
-#conteudo::before {
-    content: "";
-    display: inline-block;
-    height: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
     width: 100%;
-    position: absolute;
-    top: -35px;
-    background-image: url(../img/divisao.svg);
+    margin: 0;
+    display: none;
+}
+
+.resumo {
+    display: none;
 }

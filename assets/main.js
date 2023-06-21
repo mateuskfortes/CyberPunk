@@ -1,3 +1,4 @@
+/*
 const parte = document.querySelectorAll(".select")
 const res = document.querySelectorAll(".resumo")
 const img = document.querySelectorAll(".imglogo")
@@ -47,3 +48,5 @@ function bedgerunners() {
 
 parte[0].onclick = b2077
 parte[1].onclick = bedgerunners
+*/
+
