@@ -136,8 +136,7 @@
 
 * {
     padding: 0;
-    margin: 5px;
-    border: 1px solid black;
+    margin: 0;
     text-decoration: none;
 }
 
@@ -146,20 +145,36 @@
     src: url('../fonts/blenderprobold.otf') format('truetype');
   }
   
-
-button {
-    display: block;
-}
-
 header {
     display: flex;
     flex-direction: column;
+}
+
+.logo {
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+}
+
+.logo:nth-child(1) {
+    background-image: url(../img/back-2077-2.jpg);
+}
+
+.logo:nth-child(2) {
+    background-image: url(../img/back-edgerunners-2.jpg);
+}
+
+.logo>div {
+    align-items: center;
+    justify-content: center;
 }
 
 img {
     width: 20rem;
     height: 5rem;
     display: block;
+    margin: auto;
 }
 
 a {
@@ -168,10 +183,10 @@ a {
     background-size: contain;
     font-family: 'blender', Arial, Helvetica, sans-serif;
     list-style: none;
-    padding: .8rem 2.7rem;
+    padding: .7rem 2.7rem;
     font-size: 1rem;
     position: relative;
-    margin: auto;
+    margin: 2rem auto;
 }
 
 .saibamais {
@@ -190,4 +205,18 @@ a {
 
 .resumo {
     display: none;
+}
+
+#conteudo::before {
+    content: "";
+    background-image: url(../img/divisao.svg);
+    height: 2rem;
+    width: 100%;
+    background-size: cover;
+    position: absolute;
+}
+
+#conteudo {
+    background-color: rgb(128, 77, 77);
+    color: white;
 }
