@@ -1,0 +1,43 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    background-color: rgb(25, 25, 25);
+}
+
+header section:nth-child(1) {
+    display: flex;
+}
+
+header {
+    width: 100%;
+    height: calc(50vw);
+    background-image: url(../img/back-2077.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+header img {
+    width: 15rem;
+}
+
+button {
+    
+}
+
+nav {
+    
+}
+
+nav > ul {
+    display: flex;
+}
+
+ul > li {
+    list-style: none;
+}
+
+main {
+    color: white;
+}
