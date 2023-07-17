@@ -186,7 +186,7 @@ img {
     padding: .7rem 2.7rem;
     font-size: 1rem;
     display: inline;
-    margin: 2rem auto;
+    margin: 1rem auto 6rem auto;
     position: relative;
     width: 5rem;
 }
@@ -219,7 +219,7 @@ img {
 }
 
 #conteudo {
-    margin-top: calc(100vh - 2rem);
+    margin-top: calc(95vh - 2rem);
 }
 
 #conteudo::before {
