@@ -147,7 +147,18 @@
   
 header {
     display: flex;
-    flex-direction: column;
+}
+
+nav {
+    width: 80%;
+    height: 3rem;
+    border: 1px solid black;
+    box-sizing: border-box;
+    clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+    display: inline;
+    fill: black;
+    fill-rule: evenodd;
+    clip-rule: evenodd;
 }
 
 .logo {
@@ -174,7 +185,15 @@ img {
     width: 20rem;
     height: 5rem;
     display: block;
-    margin: auto;
+    margin: 0 auto;
+}
+
+.logo:nth-child(1) img{
+    margin-top: 5rem;
+}
+
+.logo:nth-child(2) img{
+    margin-top: 2rem;
 }
 
 #bb {
@@ -186,7 +205,7 @@ img {
     padding: .7rem 2.7rem;
     font-size: 1rem;
     display: inline;
-    margin: 1rem auto 8rem auto;
+    margin: 3rem auto auto auto;
     position: relative;
     width: 5rem;
 }
@@ -225,7 +244,7 @@ img {
 #conteudo::before {
     content: "";
     background-image: url(../img/divisao.svg);
-    height: 2rem;
+    height: 1rem;
     width: 100%;
     background-size: cover;
     display: block;
