@@ -138,6 +138,7 @@
     padding: 0;
     margin: 0;
     text-decoration: none;
+    list-style: none;
 }
 
 @font-face {
@@ -150,20 +151,45 @@ header {
 }
 
 nav {
-    width: 15rem;
-    height: 3rem;
-    background-color: cyan;
-    clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
-    margin: auto;
+    background-color: rgba(0, 0, 0, 0.665);
+    border: 2px solid cyan;
+    font-family: 'blender', Arial, Helvetica, sans-serif;
+    color: cyan;
+    border-radius: .4rem;
+    display: grid;
+    grid-template-columns: 1fr 2px 1fr;
+    overflow: hidden;
 }
 
-nav>div {
-    width: 15rem;
-    height: 3rem;
-    background-color: rgb(0, 0, 0);
-    clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
-    transform: scale(.9);
-    margin: auto;
+nav div {
+    display: inline;
+    height: 100%;
+    width: 2px;
+    background-color: cyan;
+}
+
+nav ul {
+    padding: .5rem;
+}
+
+nav ul:hover {
+    background-color: #f2e900;
+}
+
+nav ul:nth-child(2):hover nav li {
+    display: block;
+}
+
+nav li{
+    display: none;
+}
+
+nav a {
+    color: cyan;
+}
+
+nav ul::before {
+    content: "- ";
 }
 
 .logo {
