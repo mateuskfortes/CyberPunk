@@ -137,6 +137,8 @@
 * {
     padding: 0;
     margin: 0;
+    border: none;
+    background: none;
     text-decoration: none;
     list-style: none;
 }
@@ -157,8 +159,31 @@ nav {
     color: cyan;
     display: flex;
     height: 2rem;
-    clip-path: polygon(6% 0%, 100% 0%, 100% 70%, 94% 100%, 0% 100%, 0% 30%);
-    margin: auto;
+    position: fixed;
+    transform: translate(-50%, 0);
+    left: 50%;
+}
+
+nav::before {
+    content: "";
+    height: 2rem;
+    width: 1rem;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(2px);
+    position: absolute;
+    left: -1rem;
+    clip-path: polygon(0 0, 0 75%, 50% 100%, 103% 100%, 103% 0);
+}
+
+nav::after {
+    content: "";
+    height: 2rem;
+    width: 1rem;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(2px);
+    position: absolute;
+    left: 100%;
+    clip-path: polygon(-1% 0, -1% 100%, 50% 100%, 100% 75%, 100% 0);
 }
 
 nav .lin {
@@ -174,32 +199,50 @@ nav > ul {
 
 nav > ul > li  {
     padding: .5rem;
+    cursor: pointer;
+}
+
+nav > ul > button  {
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    padding: .5rem;
+    cursor: pointer;
 }
 
 nav > ul > ul {
-    display: block;
+    display: none;
     position: absolute;
     background-color: rgba(0, 0, 0, 0.665);
     backdrop-filter: blur(2px);
-    border: 2px solid cyan;
+    border: 1.5px solid cyan;
+    border-top: 3px solid cyan;
     width: auto;
     top: 2rem;
-    left: -2px;
+    left: -1px;
 }
 
 nav > ul > ul > li {
     padding: .5rem;
+    position: relative;
 }
 
-nav > ul:hover ul {
-    display: block;
-}
+nav > ul > ul > li > a::before {
+    content: "";
+    height: 2px;
+    width: 5px;
+    background-color: cyan;
+    position: absolute;
+    top: 40%;
+    left: 0;
 
+}
+/*
 nav > ul:hover, nav > ul:hover > li > a{
     color: black;
     background-color: cyan;
 }
-
+*/
 nav a {
     color: cyan;
 }

@@ -1,10 +1,25 @@
 const noticias = document.querySelector("#noticias")
+const menu = document.getElementById("menu")
+
+let vis = false
 
 function maisop() {
-    noticias.style.display = "block"
+    if (vis == false) {
+        noticias.style.backgroundColor = "cyan"
+        noticias.style.color = "black"
+        menu.style.display = "block"
+        vis = true
+    }
+    else {
+        noticias.style.backgroundColor = "transparent"
+        noticias.style.color = "cyan"
+        menu.style.display = "none"
+        vis = false
+    }
 }
 
 noticias.onclick = maisop
+console.log("aaasdf")
 
 /*
 const parte = document.querySelectorAll(".select")
