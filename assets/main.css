@@ -213,6 +213,8 @@ nav > ul > button  {
     font-size: inherit;
     padding: .8rem .5rem .8rem .5rem;
     cursor: pointer;
+    height: 3rem;
+    width: auto;
 }
 
 nav > ul > ul {
