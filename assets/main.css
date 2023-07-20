@@ -163,6 +163,7 @@ nav {
     position: fixed;
     transform: translate(-50%, 0);
     left: 50%;
+    width: auto;
 }
 
 nav::before {
@@ -214,7 +215,7 @@ nav > ul > button  {
 nav > ul > ul {
     display: none;
     position: absolute;
-    background-color: rgba(0, 0, 0, 0.665);
+    background-color: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(2px);
     border: 2px solid cyan;
     border-top: 4px solid cyan;
@@ -319,8 +320,10 @@ img {
     z-index: -1;
 }
 
+/*conteudo*/
+
 #conteudo {
-    margin-top: calc(92vh - 2rem);
+    margin-top: 90vh;
 }
 
 #conteudo::before {
