@@ -198,6 +198,8 @@ nav .lin {
 
 nav > ul {
     position: relative;
+    height: 3rem;
+    width: auto;
 }
 
 nav > ul > li  {
