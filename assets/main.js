@@ -4,7 +4,7 @@ const menu = document.getElementById("menu")
 let vis = false
 
 function maisop() {
-    if (vis == false) {
+    if (!vis) {
         noticias.style.backgroundColor = "cyan"
         noticias.style.color = "black"
         menu.style.display = "block"
