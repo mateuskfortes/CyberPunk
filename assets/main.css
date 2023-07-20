@@ -160,7 +160,7 @@ nav {
     color: cyan;
     display: flex;
     height: 3rem;
-    width: 80%;
+    width: auto;
     position: fixed;
     transform: translate(-50%, 0);
     left: 50%;
@@ -185,7 +185,8 @@ nav::after {
     backdrop-filter: blur(2px);
     position: absolute;
     left: 100%;
-    clip-path: polygon(-1% 0, -1% 100%, 25% 100%, 100% 75%, 100% 0);
+    top: 0;
+    clip-path: polygon(-3% 0, -3% 100%, 25% 100%, 100% 75%, 100% 0);
 }
 
 nav .lin {
