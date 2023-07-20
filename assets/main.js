@@ -1,3 +1,11 @@
+const noticias = document.querySelector("#noticias")
+
+function maisop() {
+    noticias.style.display = "block"
+}
+
+noticias.onclick = maisop
+
 /*
 const parte = document.querySelectorAll(".select")
 const res = document.querySelectorAll(".resumo")
