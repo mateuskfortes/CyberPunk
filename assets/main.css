@@ -159,8 +159,8 @@ nav {
     font-size: 20px;
     color: cyan;
     display: flex;
-    height: 3rem;
-    width: auto;
+    height: 50px;
+    width: 250px;
     position: fixed;
     transform: translate(-50%, 0);
     left: 50%;
@@ -198,8 +198,6 @@ nav .lin {
 
 nav > ul {
     position: relative;
-    height: 3rem;
-    width: auto;
 }
 
 nav > ul > li  {
@@ -213,8 +211,6 @@ nav > ul > button  {
     font-size: inherit;
     padding: .8rem .5rem .8rem .5rem;
     cursor: pointer;
-    height: 3rem;
-    width: auto;
 }
 
 nav > ul > ul {
@@ -224,13 +220,12 @@ nav > ul > ul {
     backdrop-filter: blur(2px);
     border: 2px solid cyan;
     border-top: 4px solid cyan;
-    width: auto;
     top: 3rem;
     left: 0;
 }
 
 nav > ul > ul > li {
-    padding: .5rem;
+    padding: 10px;
     position: relative;
 }
 
