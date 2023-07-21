@@ -152,6 +152,34 @@ header {
     display: flex;
 }
 
+.rolar {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    background-color: rgb(0, 0, 0, 0.6);
+    background-image: url(../img/seta.svg);
+    background-size: 70%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    left: calc(100% - 60px);
+    top: 70%;
+}
+
+.rolar div {
+    animation: glitch linear 3s infinite;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    background-image: url(../img/seta.svg);
+    background-size: 70%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+}
+
 nav {
     font-family: 'blender', Arial, Helvetica, sans-serif;
     font-size: 20px;
@@ -212,7 +240,7 @@ nav > ul > li  {
     position: absolute;
     background-color: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(2px);
-    border: 2px solid cyan;
+    border: 1px solid cyan;
     border-top: 4px solid cyan;
     top: 3rem;
     left: 0;
@@ -239,7 +267,6 @@ nav > ul > ul > li > a::before {
     position: absolute;
     top: 40%;
     left: 0;
-
 }
 
 nav a {
