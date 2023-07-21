@@ -174,7 +174,7 @@ nav::before {
     backdrop-filter: blur(2px);
     position: absolute;
     left: -1rem;
-    clip-path: polygon(0 0, 0 75%, 75% 100%, 103% 100%, 103% 0);
+    clip-path: polygon(0 0, 0 75%, 75% 100%, 100% 100%, 100% 0);
 }
 
 nav::after {
@@ -186,7 +186,7 @@ nav::after {
     position: absolute;
     left: 100%;
     top: 0;
-    clip-path: polygon(-3% 0, -3% 100%, 25% 100%, 100% 75%, 100% 0);
+    clip-path: polygon(0% 0, 0% 100%, 25% 100%, 100% 75%, 100% 0);
 }
 
 nav .lin {
@@ -205,7 +205,11 @@ nav > ul > li  {
     cursor: pointer;
 }
 
-nav > ul > button  {
+#noticias {
+
+}
+
+.noticias-fechado {
     color: inherit;
     font-family: inherit;
     font-size: inherit;
@@ -213,8 +217,16 @@ nav > ul > button  {
     cursor: pointer;
 }
 
-nav > ul > ul {
-    display: none;
+.noticias-aberto {
+    font-family: inherit;
+    font-size: inherit;
+    padding: .8rem .5rem .8rem .5rem;
+    cursor: pointer;
+    background-color: cyan;
+    color: black;
+}
+
+#menu {
     position: absolute;
     background-color: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(2px);
@@ -222,6 +234,14 @@ nav > ul > ul {
     border-top: 4px solid cyan;
     top: 3rem;
     left: 0;
+}
+
+.menu-fechado {
+    display: none;
+}
+
+.menu-aberto {
+    display: block;
 }
 
 nav > ul > ul > li {

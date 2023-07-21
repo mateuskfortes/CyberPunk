@@ -2,7 +2,7 @@ const noticias = document.querySelector("#noticias")
 const menu = document.getElementById("menu")
 
 let vis = false
-
+/*
 function maisop() {
     if (!vis) {
         noticias.style.backgroundColor = "cyan"
@@ -20,7 +20,23 @@ function maisop() {
 
 noticias.onclick = maisop
 console.log("aaasdf")
-
+*/
+noticias = addEventListener("click", function() {
+    if(vis) {
+        noticias.classList.remove("noticias-aberto")
+        noticias.classList.add("noticias-fechado")
+        menu.classList.remove("menu-aberto")
+        menu.classList.add("menu-fechado")
+        vis = false
+    }
+    else {
+        noticias.classList.add("noticias-aberto")
+        noticias.classList.remove("noticias-fechado")
+        menu.classList.add("menu-aberto")
+        menu.classList.remove("menu-fechado")
+        vis = true
+    }
+})
 /*
 const parte = document.querySelectorAll(".select")
 const res = document.querySelectorAll(".resumo")
