@@ -18,6 +18,23 @@ noticias.addEventListener("click", function() {
         vis = true
     }
 })
+
+const setaa = document.querySelector("#rolar")
+const setab = document.querySelector("#rolar div")
+
+let pos
+
+window.addEventListener("scroll", function() {
+    pos = window.scrollY
+    if(pos < 10) {
+        setaa.classList.remove("invisivel")
+        setab.classList.remove("invisivel")
+    }
+    else {
+        setaa.classList.add("invisivel")
+        setab.classList.add("invisivel")
+    }
+})
 /*
 function maisop() {
     if (!vis) {

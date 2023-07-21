@@ -152,7 +152,7 @@ header {
     display: flex;
 }
 
-.rolar {
+#rolar {
     position: fixed;
     width: 60px;
     height: 60px;
@@ -166,7 +166,7 @@ header {
     top: 70%;
 }
 
-.rolar div {
+#rolar div {
     animation: glitch linear 3s infinite;
     position: absolute;
     top: 0;
@@ -178,6 +178,10 @@ header {
     background-position: center;
     background-repeat: no-repeat;
     border-radius: 50%;
+}
+
+.invisivel {
+    display: none;
 }
 
 nav {
