@@ -323,13 +323,13 @@ img {
 /*conteudo*/
 
 #conteudo {
-    margin-top: 90vh;
+    margin-top: 85vh;
 }
 
 #conteudo::before {
     content: "";
     background-image: url(../img/divisao.svg);
-    height: 1rem;
+    height: 2rem;
     width: 100%;
     background-size: cover;
     display: block;
