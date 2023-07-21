@@ -161,9 +161,9 @@ header {
     background-size: 70%;
     background-position: center;
     background-repeat: no-repeat;
-    border-radius: 50%;
     left: calc(100% - 60px);
-    top: 70%;
+    top: calc(95vh - 60px);
+    clip-path: polygon(10px 0, 60px 0, 60px 50px, 50px 60px, 0 60px, 0 10px);
 }
 
 #rolar div {
@@ -177,7 +177,15 @@ header {
     background-size: 70%;
     background-position: center;
     background-repeat: no-repeat;
-    border-radius: 50%;
+}
+
+#rolar::before {
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: cyan;
+    clip-path: polygon(10px 0, 60px 0, 60px 50px, 50px 60px, 0 60px, 0 10px, 10px 0, 2px 10px, 2px 58px, 50px 58px, 58px 50px, 58px 2px, 10px 2px, 2px 10px);
 }
 
 .invisivel {
@@ -211,7 +219,7 @@ nav .tra {
     margin: auto 0;
     height: 20px;
     width: 2px;
-    background-color: rgb(70, 70, 70);
+    background-color: rgb(53, 53, 53);
     backdrop-filter: blur(0);
 }
 
@@ -356,7 +364,7 @@ img {
 /*conteudo*/
 
 #conteudo {
-    margin-top: 85vh;
+    margin-top: 95vh;
 }
 
 #conteudo::before {
