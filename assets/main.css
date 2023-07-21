@@ -147,6 +147,11 @@
     font-family: 'blender';
     src: url('../fonts/blenderprobold.otf') format('truetype');
   }
+
+@font-face {
+    font-family: 'blenderl';
+    src: url('../fonts/BlenderPro-Book.woff2') format('truetype');
+}
   
 header {
     display: flex;
@@ -193,7 +198,7 @@ header {
 }
 
 nav {
-    font-family: 'blender', Arial, Helvetica, sans-serif;
+    font-family: 'blenderl', Arial, Helvetica, sans-serif;
     font-size: 20px;
     color: cyan;
     display: flex;
@@ -232,23 +237,23 @@ nav > ul > li  {
     cursor: pointer;
 }
 
-#noticias {
+nav > ul > button  {
     font-family: inherit;
     font-size: inherit;
     padding: .8rem .5rem .8rem .5rem;
     cursor: pointer;
 }
 
-.noticias-fechado {
+.fechado {
     color: inherit;
 }
 
-.noticias-aberto {
+.aberto {
     background-color: cyan;
     color: black;
 }
 
-#menu {
+.menu {
     position: absolute;
     background-color: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(2px);
