@@ -146,11 +146,42 @@
 @font-face {
     font-family: 'blender';
     src: url('../fonts/blenderprobold.otf') format('truetype');
-  }
+}
 
 @font-face {
     font-family: 'blenderl';
     src: url('../fonts/BlenderPro-Book.woff2') format('truetype');
+}
+
+@media screen and (max-width: 899px) {
+    nav {
+        transform: translate(-50%, 0);
+        left: 50%;
+    }
+    nav::before {
+        clip-path: polygon(0 0,100% 0,100% 36px,calc(100% - 15px) 50px,15px 100%,0 36px);
+    }
+    .logo {
+        height: 50vh;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    nav {
+        transform: translate(-100%, 0);
+        top: 2rem;
+        left: calc(100% - 2rem);
+    }
+    nav::before {
+        clip-path: polygon(0 13px, 15px 0, 100% 0, 100% 37px, calc(100% - 15px) 50px, 0 100%);
+    }
+    .logo {
+        width: 50vw;
+        height: 100vh;
+    }
+    #fundo {
+        display: flex;
+    }
 }
   
 header {
@@ -166,8 +197,8 @@ header {
     background-size: 70%;
     background-position: center;
     background-repeat: no-repeat;
-    left: calc(100% - 60px);
-    top: calc(95vh - 60px);
+    left: calc(100% - 70px);
+    top: calc(85vh - 60px);
     clip-path: polygon(10px 0, 60px 0, 60px 50px, 50px 60px, 0 60px, 0 10px);
 }
 
@@ -205,19 +236,17 @@ nav {
     height: 50px;
     width: 260px;
     position: fixed;
-    transform: translate(-50%, 0);
-    left: 50%;
 }
+
 
 nav::before {
     content: "";
     height: inherit;
-    width: 280px;
+    width: 290px;
     background-color: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(2px);
     position: absolute;
     left: -15px;
-    clip-path: polygon(0 0,100% 0,100% 37px,calc(100% - 15px) 50px,15px 100%,0 37px);
 }
 
 nav .tra {
@@ -294,7 +323,6 @@ nav a {
     background-size: cover;
     display: flex;
     flex-direction: column;
-    height: 50vh;
 }
 
 .logo:nth-child(1) {
