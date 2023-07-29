@@ -1,8 +1,12 @@
 const noticias = document.getElementById("noticias")
 const menu = document.querySelectorAll(".menu")
 const cdprojectred = document.getElementById("cdprojectred")
+
 let visn = false
 let viscd = false
+let largura = window.innerWidth
+let larguram = 900
+
 function opmenu(n, m, v) {
     if (v) {
         n.classList.remove("aberto");
@@ -30,13 +34,19 @@ function fechar(n) {
 }
 
 noticias.addEventListener("click", function () {
-    fechar(cdprojectred)
-    visn = opmenu(noticias, menu[1], visn);
+    largura = window.innerWidth
+    if (largura < larguram) {
+        fechar(cdprojectred)
+        visn = opmenu(noticias, menu[1], visn);
+    }
 });
   
 cdprojectred.addEventListener("click", function () {
-    fechar(noticias)
-    viscd = opmenu(cdprojectred, menu[0], viscd);
+    largura = window.innerWidth
+    if (largura < larguram) {
+        fechar(noticias)
+        viscd = opmenu(cdprojectred, menu[0], viscd);
+    }
 });
 
 const setaa = document.querySelector("#rolar")
