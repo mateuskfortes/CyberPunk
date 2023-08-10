@@ -4,22 +4,27 @@ const eresposta = equiz.querySelector(".resposta")
 
 
 async function main() {
-const quiz = [
-        {
-            "pergunta" : "Quando foi lançando CyberPunk 2077?",
-            "alternativa" : ["aa","b","c","d"],
-            "resposta" : 2
-        },
-        {
-            "pergunta" : "Qual é o nome da empresa criadora do jogo?",
-            "alternativa" : ["a","b","c","d"]
-        }
-    ]
+    const request = await fetch("quiz.json")
+    const quiz = await request.json()
 
-    const npergunta = 0
-    epergunta.innerHTML = quiz[npergunta].pergunta
+    let npergunta = 0
+    
+    function pergunta(np) {
+        epergunta.innerHTML = quiz[np].pergunta
+        eresposta.innerHTML = ""
+        quiz[npergunta].alternativa.forEach(alt => eresposta.innerHTML <= "<button>$(alt)</button>")
+    }
 
-    eresposta.innerHTML = ""
-
-    quiz[npergunta].alternativa.forEach(alt => eresposta.innerHTML <= "<button>$(alt)</button>")
+    eresposta.addEventListener("click", ev => {
+    const alternativaClicada = ev.target;
+    const arrayAlternativas = [...eresposta.children]
+    const Clicada = arrayAlternativas.indexOf(alternativaClicada)
+    if (Clicada == quiz[npergunta].resposta) {
+        pergunta(++npergunta)
+        return
+    }
+    console.log("Errado");
+    })
 }
+
+main()

@@ -1,4 +1,4 @@
-const quiz = [
+[
     {
         "pergunta" : "Quando foi lançando CyberPunk 2077?",
         "alternativa" : ["aa","b","c","d"],
@@ -6,6 +6,7 @@ const quiz = [
     },
     {
         "pergunta" : "Qual é o nome da empresa criadora do jogo?",
-        "alternativa" : ["a","b","c","d"]
+        "alternativa" : ["a","b","c","d"],
+        "resposta" : 3
     }
 ]
