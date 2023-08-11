@@ -2,11 +2,52 @@
     padding: 0;
     margin: 0;
 }
+body {
+    background-image: url(../img/back-2077-2.jpg);
+}
 section {
     height: 100vh;
     width: 100vw;
 }
 .quiz {
-    height: 50vh;
-    width: 50vw;
+    height: 30vh;
+    width:80vw;
+    margin: auto;
+    margin-top: 0;
+    padding: 30px;
+    border-radius: 10%;
+    background-color: rgba(89, 89, 89, 0.396);
+    backdrop-filter: blur(5px);
+    align-items: center;
+    font-family: 'Times New Roman', Times, serif;
+}
+.pergunta {
+    text-align: center;
+}
+.resposta {
+    margin-top: 20px;
+    margin-left: 30px;
+}
+button {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid cyan;
+    border-radius: 5px;
+    background: none;
+}
+#fim {
+    background-color: rgb(175, 175, 175); 
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    z-index: 2;
+}
+#fim div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: xx-large;
 }
