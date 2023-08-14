@@ -1,3 +1,4 @@
+/*
 const noticias = document.getElementById("noticias")
 const menu = document.querySelectorAll(".menu")
 const cdprojectred = document.getElementById("cdprojectred")
@@ -65,3 +66,4 @@ window.addEventListener("scroll", function() {
         setab.classList.add("invisivel")
     }
 })
+*/
