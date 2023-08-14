@@ -144,290 +144,6 @@
     src: url('../fonts/BlenderPro-Book.woff2') format('truetype');
 }
 
-/*
-@media screen and (max-width: 899px) {
-    nav {
-        transform: translate(-50%, 0);
-        left: 50%;
-    }
-    nav::before {
-        clip-path: polygon(0 0,100% 0,100% 36px,calc(100% - 15px) 50px,15px 100%,0 36px);
-    }
-    #fundo {
-        position: fixed;
-    }
-    .logo {
-        height: 50vh;
-        background-size: cover;
-        background-position: center;
-        display: flex;
-        flex-direction: column;
-    }
-    .logo img {
-        width: 52vw;
-        height: 13vw;
-        margin: 0 auto;
-    }
-    .logo:nth-child(1) img{
-        margin-top: 13vh;
-    }
-    .logo:nth-child(2) img{
-        margin-top: 5vh;
-    }
-    #conteudo {
-        margin-top: 95vh;
-        z-index: -1;
-    }
-}
-
-@media screen and (min-width: 900px) {
-    nav {
-        transform: translate(-100%, 0);
-        top: 2rem;
-        left: calc(100% - 2rem);
-    }
-    nav::before {
-        clip-path: polygon(0 13px, 15px 0, 100% 0, 100% 37px, calc(100% - 15px) 50px, 0 100%);
-    }
-    #fundo {
-        display: flex;
-        position: relative;
-    }
-    .logo {
-        width: 50vw;
-        height: 100vh;
-        transition: .5s;
-    }
-    .logo img {
-        width: 40vw;
-        height: 10vw;
-        margin: 0 auto;
-        margin-top: 20vh;
-    }
-    .logo:nth-child(1):hover {
-        transform: scale(1.5);
-        transition: 1s;
-        z-index: 2;
-    }
-    .logo:nth-child(2):hover {
-        transform: scale(1.5);
-        transition: 1s;
-    }
-    #conteudo {
-        margin-top: -2rem;
-        z-index: 1;
-    }
-}
-
-body {
-    overflow: hidden;
-}
-  
-header {
-    display: flex;
-}
-
-#rolar {
-    position: fixed;
-    width: 60px;
-    height: 60px;
-    background-color: rgb(0, 0, 0, 0.6);
-    background-image: url(../img/seta.svg);
-    background-size: 70%;
-    background-position: center;
-    background-repeat: no-repeat;
-    left: calc(100% - 70px);
-    top: calc(85vh - 60px);
-    clip-path: polygon(10px 0, 60px 0, 60px 50px, 50px 60px, 0 60px, 0 10px);
-}
-
-#rolar div {
-    animation: glitch linear 3s infinite;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 60px;
-    height: 60px;
-    background-image: url(../img/seta.svg);
-    background-size: 70%;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-#rolar::before {
-    content: "";
-    position: absolute;
-    width: 60px;
-    height: 60px;
-    background-color: cyan;
-    clip-path: polygon(10px 0, 60px 0, 60px 50px, 50px 60px, 0 60px, 0 10px, 10px 0, 2px 10px, 2px 58px, 50px 58px, 58px 50px, 58px 2px, 10px 2px, 2px 10px);
-}
-
-.invisivel {
-    display: none;
-}
-
-nav {
-    font-family: 'blenderl', Arial, Helvetica, sans-serif;
-    font-size: 20px;
-    color: cyan;
-    display: flex;
-    height: 50px;
-    width: 260px;
-    position: fixed;
-}
-
-
-nav::before {
-    content: "";
-    height: inherit;
-    width: 290px;
-    background-color: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(2px);
-    position: absolute;
-    left: -15px;
-}
-
-nav .tra {
-    margin: auto 0;
-    height: 20px;
-    width: 2px;
-    background-color: rgb(53, 53, 53);
-    backdrop-filter: blur(0);
-}
-
-nav > ul {
-    position: relative;
-}
-
-nav > ul > li  {
-    padding: .8rem .5rem .8rem .5rem;
-    cursor: pointer;
-}
-
-nav > ul > button  {
-    font-family: inherit;
-    font-size: inherit;
-    padding: .8rem .5rem .8rem .5rem;
-    cursor: pointer;
-}
-
-.fechado {
-    color: inherit;
-}
-
-.aberto {
-    background-color: cyan;
-    color: black;
-}
-
-.menu {
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(2px);
-    border: 1px solid cyan;
-    border-top: 4px solid cyan;
-    top: 3rem;
-    left: 0;
-}
-
-.menu-fechado {
-    display: none;
-}
-
-.menu-aberto {
-    display: block;
-}
-
-nav > ul > ul > li {
-    padding: 10px;
-    position: relative;
-}
-
-nav > ul > ul > li > a::before {
-    content: "";
-    height: 2px;
-    width: 5px;
-    background-color: cyan;
-    position: absolute;
-    top: 40%;
-    left: 0;
-}
-
-nav a {
-    color: cyan;
-}
-
-.logo:nth-child(1) {
-    background-image: url(../img/back-2077-2.jpg);
-}
-
-.logo:nth-child(2) {
-    background-image: url(../img/back-edgerunners-2.jpg);
-}
-
-.logo>div {
-    align-items: center;
-    justify-content: center;
-}
-
-.bb {
-    font-family: 'blender', Arial, Helvetica, sans-serif;
-    background-image: url(../img/botao.svg);
-    background-repeat: no-repeat;
-    background-size: contain;
-    list-style: none;
-    padding: .7rem 2.7rem;
-    font-size: 1rem;
-    margin: 3rem auto auto auto;
-    position: relative;
-    width: 76px;
-    display: block;
-}
-
-.bb a {
-    background-image: url(../img/botao.svg);
-    background-repeat: no-repeat;
-    background-size: contain;
-    font-family: 'blender', Arial, Helvetica, sans-serif;
-    list-style: none;
-    padding: inherit;
-    font-size: inherit;
-    top: 0rem;
-    left: 0rem;
-    animation: glitch 3.5s linear infinite;
-    position: absolute;
-    width: inherit;
-    color: black;
-}
-
-.resumo {
-    display: none;
-}
-
-#fundo {
-    width: 100%;
-    height: 100%;
-}
-
-#conteudo::before {
-    content: "";
-    background-image: url(../img/divisao.svg);
-    height: 2rem;
-    width: 100%;
-    background-size: cover;
-    display: block;
-    margin-bottom: -1px;
-}
-
-#conteudo div {
-    background-color: rgb(0, 0, 0);
-    color: white;
-}
-*/
-
-/* Novo */
-
 :root {
     --cor-ciano: #00F0FF;
     --cor-amarelo: #FCEE09;
@@ -437,6 +153,7 @@ nav a {
 * {
     padding: 0;
     margin: 0;
+    overflow: visible;
 }
 body {
     overflow-x: hidden;
@@ -470,9 +187,8 @@ nav {
     margin: 20px 40px 0 auto;
     height: 40px;
     width: 500px;
-    background-color: rgba(0, 0, 0, 0.383);
     backdrop-filter: blur(2px);
-    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+    overflow: visible;
 }
 nav::before {
     content: "";
@@ -488,40 +204,90 @@ nav::before {
         10px 100%,
         0 calc(100% - 10px),
         0 0,
-        2px 2px,
-        2px calc(100% - 11.5px),
-        11.5px calc(100% - 2px),
-        calc(100% - 2px) calc(100% - 2px),
-        calc(100% - 2px) 11.5px,
-        calc(100% - 11.5px) 2px,
-        2px 2px);
+        1px 1px,
+        1px calc(100% - 10.7px),
+        10.7px calc(100% - 1px),
+        calc(100% - 1px) calc(100% - 1px),
+        calc(100% - 1px) 10.7px,
+        calc(100% - 10.7px) 1px,
+        1px 1px);
 }
-nav ul {
+nav::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: inherit;
+    width: inherit;
+    background-color: rgba(0, 0, 0, 0.383);
+    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+    z-index: -1;
+}
+nav > ul {
     display: flex;
     margin-left: 20px;
 }
-nav ul li {
+nav > ul > li {
     padding: 10px;
     position: relative;
     list-style: none;
 }
-nav ul li a{
-    text-decoration: none;
-    color: inherit;
-    border: none;
-    background: none;
+nav > ul > li > ul {
+    width: 150px;
+    height: 70px;
+    color: white;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.383);
+    top: 100%;
+    list-style: none;
+    padding: 5px 10px;
+    visibility: hidden;
 }
-nav ul li:nth-child(5) {
+nav > ul > li > ul::before {
+    content: "";
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    top: 0;
+    left: 0;
     background-color: var(--cor-ciano);
-    padding-right: 30px;
+    clip-path: polygon(
+        0 0,
+        calc(100% - 10px) 0,
+        100% 10px,
+        100% 100%,
+        10px 100%,
+        0 calc(100% - 10px),
+        0 0,
+        1px 1px,
+        1px calc(100% - 10.7px),
+        10.7px calc(100% - 1px),
+        calc(100% - 1px) calc(100% - 1px),
+        calc(100% - 1px) 10.7px,
+        calc(100% - 10.7px) 1px,
+        1px 1px);
 }
-nav ul li button {
+nav > ul > li > ul > li {
+    position: relative;
+    margin: 3px;
+}
+nav > ul > li > ul > li::before {
+    content: "";
+    position: absolute;
+    left: -13px;
+    top: 50%;
+    background-color: var(--cor-ciano);
+    height: 1px;
+    width: 5px;
+}
+nav > ul > li:nth-child(5) {
     color: black;
-    text-decoration: none;
-    border: none;
-    background: none;
+    background-color: var(--cor-ciano);
+    height: 20px;
+    width: 120px;
+    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 0 100%);
 }
-nav ul li:nth-child(4):hover a::after {
+nav > ul > li:nth-child(4):hover span::after {
     content: "";
     position: absolute;
     top: 10px;
@@ -530,7 +296,7 @@ nav ul li:nth-child(4):hover a::after {
     width: 1px;
     background-color: black;
 }
-nav ul li a::before {
+nav > ul > li span::before {
     content: "";
     position: absolute;
     top: 10px;
@@ -539,12 +305,18 @@ nav ul li a::before {
     width: 1px;
     background-color: var(--cor-ciano);
 }
-nav ul li:hover {
+nav > ul > li:hover {
     color: black;
     background-color: var(--cor-ciano);
+    cursor: default;
+}
+nav > ul > li:hover > ul {
+    visibility: visible;
+}
+nav > ul > li:nth-child(5):hover {
     cursor: pointer;
 }
-nav ul li:hover a::before {
+nav > ul > li:hover span::before {
     display: none;
 }
 .canto {
@@ -552,8 +324,9 @@ nav ul li:hover a::before {
     height: 100%;
     width: 21px;
     left: 0;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 10px 100%, 0 calc(100% - 10px));
 }
-nav ul li:nth-child(1):hover ~ .canto{
+nav > ul > li:nth-child(1):hover ~ .canto{
     background-color: var(--cor-ciano);
 }
 
@@ -669,6 +442,9 @@ main {
     height: 2rem;
     background-image: url(../img/divisao.svg);
 }
+
+/* 1 paragrafo */
+
 .paragrafo:nth-child(1) {
     margin: 2rem;
     width: 36rem;
