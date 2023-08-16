@@ -155,6 +155,9 @@
     margin: 0;
     overflow: visible;
 }
+html {
+    font-size: 16px;
+}
 body {
     overflow-x: hidden;
 }
@@ -175,7 +178,18 @@ header::before {
     width: 100%;
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.774), rgba(0, 0, 0, 0));
 }
-
+/*
+header::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    transform: translate(-100%, 0 );
+    left: calc(100vw - 30vh + 18px);
+    height: 100vh;
+    width: 30vw;
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.774), rgba(0, 0, 0, 0));
+}
+*/
 /* Menu */
 
 .menu {
@@ -183,12 +197,13 @@ header::before {
 }
 nav {
     color: white;
+    font-size: 16px;
     font-family: 'blenderl', Arial, Helvetica, sans-serif;
-    margin: 20px 40px 0 auto;
+    margin: 20px 20vw 0 auto;
     height: 40px;
     width: 500px;
     backdrop-filter: blur(2px);
-    overflow: visible;
+    overflow: visible; 
 }
 nav::before {
     content: "";
@@ -298,6 +313,7 @@ nav > ul > li:nth-child(4):hover span::after {
     height: 20px;
     width: 1px;
     background-color: black;
+    z-index: 1;
 }
 nav > ul > li span::before {
     content: "";
@@ -340,11 +356,11 @@ nav > ul > li:nth-child(1):hover ~ .canto{
     height: 70vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    margin: auto;
+    margin: 10vh auto;
 }
 .selecionar > div {
-    width: 20rem;
-    height: 12rem;
+    width: 30vw;
+    height: 20vw;
     background-color: rgba(0, 0, 0, 0.6);
     margin: auto;
     clip-path: polygon(0 0,
@@ -383,8 +399,8 @@ nav > ul > li:nth-child(1):hover ~ .canto{
         2px 2px);
 }
 .selecionar > div img {
-    width: 16rem;
-    height: 4rem;
+    width: 24vw;
+    height: 6vw;
     margin: auto;
     margin-top: 10px;
     display: block;
@@ -421,6 +437,46 @@ nav > ul > li:nth-child(1):hover ~ .canto{
     background-size: contain;
     text-decoration: none;
     list-style: none;
+}
+
+/* lateral */
+
+#baixo {
+    display: flex;
+}
+
+#lateral {
+    height: 50vh;
+    width: 30vh;
+    margin-top: 20px;
+    background-image: url(../img/nightcity.webp);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+#lateral::before {
+    content: "";
+    position: absolute;
+    height: inherit;
+    width: inherit;
+    background-color: var(--cor-amarelo);
+    clip-path: polygon(
+        20px 0,
+        100% 0,
+        100% 100%,
+        20px 100%,
+        0 calc(100% - 20px),
+        0 20px,
+        20px 0,
+
+        21.5px 2px,
+        2px 21.5px,
+        2px calc(100% - 21.5px),
+        21.5px calc(100% - 2px),
+        calc(100% - 2px) calc(100% - 2px),
+        calc(100% - 2px) 2px,
+        21.5px 2px);
 }
 
 /* Conteudo */
