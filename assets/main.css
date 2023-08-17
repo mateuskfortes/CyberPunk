@@ -437,6 +437,21 @@ nav > ul > li:nth-child(1):hover ~ .canto{
     height: 70vh;
     width: 40vh;
     margin-top: 20px;
+<<<<<<< HEAD
+=======
+    font-family: 'blender', Arial, Helvetica, sans-serif;
+    background-image: url(../img/nightcity.webp);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    clip-path: polygon(
+        20px 0,
+        100% 0,
+        100% 100%,
+        20px 100%,
+        0 calc(100% - 20px),
+        0 20px);
+>>>>>>> 57d1f5faff161fcaf45c286f60adeda8057db3c6
     position: relative;
     box-shadow: 1px 1px black;
 }
@@ -463,6 +478,7 @@ nav > ul > li:nth-child(1):hover ~ .canto{
         calc(100% - 2px) 2px,
         21.5px 2px);
 }
+<<<<<<< HEAD
 #lateral::after {
     content: "";
     position: absolute;
@@ -489,6 +505,38 @@ nav > ul > li:nth-child(1):hover ~ .canto{
     color: white;
     margin: auto;
 }
+=======
+#lateral h1 {
+    color: white;
+    text-align: center;
+    margin-top: 5vh;
+}
+#lateral #botao {
+    width: 25vh;
+    height: 7vh;
+    font-size: 115%;
+    background-color: black;
+    clip-path: polygon(5vh 0,
+    100% 0,
+    calc(100% - 5vh) 100%,
+    0 100%);
+    text-align: center;
+    margin: auto;
+}
+#lateral #botao::before {
+    content: "";
+    position: absolute;
+    height: inherit;
+    width: inherit;
+    top: 0;
+    left: 0;
+    background-color: var(--cor-amarelo);
+}
+#lateral a {
+    color: var(--cor-ciano);
+    text-decoration: none;
+}
+>>>>>>> 57d1f5faff161fcaf45c286f60adeda8057db3c6
 
 /* Conteudo */
 
