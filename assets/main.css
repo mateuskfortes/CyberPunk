@@ -169,7 +169,7 @@ header {
     background-position: center;
     background-size: cover;
     height: 100vh;
-    width: 100%;
+    width: inherit;
 }
 header::before {
     content: "";
@@ -178,18 +178,7 @@ header::before {
     width: 100%;
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.774), rgba(0, 0, 0, 0));
 }
-/*
-header::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    transform: translate(-100%, 0 );
-    left: calc(100vw - 30vh + 18px);
-    height: 100vh;
-    width: 30vw;
-    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.774), rgba(0, 0, 0, 0));
-}
-*/
+
 /* Menu */
 
 .menu {
@@ -199,11 +188,10 @@ nav {
     color: white;
     font-size: 16px;
     font-family: 'blenderl', Arial, Helvetica, sans-serif;
-    margin: 20px 20vw 0 auto;
+    margin: 20px 40px 0 auto;
     height: 40px;
     width: 500px;
     backdrop-filter: blur(2px);
-    overflow: visible; 
 }
 nav::before {
     content: "";
@@ -352,7 +340,7 @@ nav > ul > li:nth-child(1):hover ~ .canto{
 /* Selecionar o cyberpunk */
 
 .selecionar {
-    width: 90vw;
+    width: 70vw;
     height: 70vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -446,14 +434,11 @@ nav > ul > li:nth-child(1):hover ~ .canto{
 }
 
 #lateral {
-    height: 50vh;
-    width: 30vh;
+    height: 70vh;
+    width: 40vh;
     margin-top: 20px;
-    background-image: url(../img/nightcity.webp);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
     position: relative;
+    box-shadow: 1px 1px black;
 }
 #lateral::before {
     content: "";
@@ -477,6 +462,32 @@ nav > ul > li:nth-child(1):hover ~ .canto{
         calc(100% - 2px) calc(100% - 2px),
         calc(100% - 2px) 2px,
         21.5px 2px);
+}
+#lateral::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: inherit;
+    height: inherit;
+    clip-path: polygon(
+        20px 0,
+        100% 0,
+        100% 100%,
+        20px 100%,
+        0 calc(100% - 20px),
+        0 20px,
+        20px 0);
+    background-image: url(../img/nightcity.webp);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+#lateral h1 {
+    font-family: 'blender', Arial, Helvetica, sans-serif;
+    color: white;
+    margin: auto;
 }
 
 /* Conteudo */
