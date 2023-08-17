@@ -449,10 +449,18 @@ nav > ul > li:nth-child(1):hover ~ .canto{
     height: 50vh;
     width: 30vh;
     margin-top: 20px;
+    font-family: 'blender', Arial, Helvetica, sans-serif;
     background-image: url(../img/nightcity.webp);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    clip-path: polygon(
+        20px 0,
+        100% 0,
+        100% 100%,
+        20px 100%,
+        0 calc(100% - 20px),
+        0 20px);
     position: relative;
 }
 #lateral::before {
@@ -477,6 +485,36 @@ nav > ul > li:nth-child(1):hover ~ .canto{
         calc(100% - 2px) calc(100% - 2px),
         calc(100% - 2px) 2px,
         21.5px 2px);
+}
+#lateral h1 {
+    color: white;
+    text-align: center;
+    margin-top: 5vh;
+}
+#lateral #botao {
+    width: 25vh;
+    height: 7vh;
+    font-size: 115%;
+    background-color: black;
+    clip-path: polygon(5vh 0,
+    100% 0,
+    calc(100% - 5vh) 100%,
+    0 100%);
+    text-align: center;
+    margin: auto;
+}
+#lateral #botao::before {
+    content: "";
+    position: absolute;
+    height: inherit;
+    width: inherit;
+    top: 0;
+    left: 0;
+    background-color: var(--cor-amarelo);
+}
+#lateral a {
+    color: var(--cor-ciano);
+    text-decoration: none;
 }
 
 /* Conteudo */
