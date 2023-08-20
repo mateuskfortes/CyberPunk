@@ -1,0 +1,215 @@
+@keyframes errado {
+    0% {
+        background-color: var(--cor-vermelho);
+    }
+    50% {
+        background-color: var(--cor-vermelho);
+    }
+    51% {
+        background-color: var(--cor-ciano);
+    }
+}
+@keyframes erradoc {
+    0% {
+        color: var(--cor-vermelho);
+    }
+    50% {
+        color: var(--cor-vermelho);
+    }
+    51% {
+        color: var(--cor-ciano);
+    }
+}
+
+@font-face {
+    font-family: 'blender';
+    src: url('../fonts/blenderprobold.otf') format('truetype');
+}
+@font-face {
+    font-family: 'blenderl';
+    src: url('../fonts/BlenderPro-Book.woff2') format('truetype');
+}
+
+:root {
+    --cor-ciano: #00F0FF;
+    --cor-amarelo: #FCEE09;
+    --cor-vermelho: #FF003C;
+    --cor-verde: #1afe49;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+html {
+    font-size: 20px;
+}
+body {
+    background-image: url(../img/back-2077.jpg);
+    background-position: center;
+    background-size: cover;
+    overflow-x: hidden;
+    width: 100vw;
+}
+section {
+    height: 100vh;
+    width: 100%;
+    font-family: 'blender', Arial, Helvetica, sans-serif;
+    font-size: 1.6rem;
+}
+.quiz {
+     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.554), rgba(0, 0, 0, 0));
+}
+.quiz > div:nth-child(1) {
+    display: flex;
+}
+#numero {
+    height: 3rem;
+    width: 1rem;
+    padding: 0 4rem 0 2rem;
+    position: relative;
+    text-align: center;
+    background-color: var(--cor-ciano);
+    clip-path: polygon(
+        0 0,
+        0 100%,
+        40% 100%, 
+        100% 0
+    );
+}
+#pergunta {
+    color: white;
+    margin-top: 1rem;
+    margin-right: 9rem;
+}
+#resposta {
+    display: grid;
+    margin-top: 7rem;
+    grid-template-columns: 1fr 1fr;
+}
+.quiz button {
+    font-size: 1.2rem;
+    font-family: 'blender', Arial, Helvetica, sans-serif;
+    height: 5rem;
+    width: 15rem;
+    margin: 1rem auto;
+    color: var(--cor-ciano);
+    background-color: rgba(0, 0, 0, 0.442);
+    border: none;
+    cursor: pointer;
+    clip-path: polygon(0 0,
+        calc(100% - 20px) 0,
+        100% 20px,
+        100% 100%,
+        20px 100%,
+        0 calc(100% - 20px));
+    position: relative;
+    transition: .5s;
+}
+.quiz button:hover {
+    transform: scale(1.1);
+    transition: .7s;
+}
+.quiz button::before {
+    content: "";
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    top: 0;
+    left: 0;
+    background-color: var(--cor-ciano);
+    clip-path: polygon(
+        0 0,
+        calc(100% - 20px) 0,
+        100% 20px,
+        100% 100%,
+        20px 100%,
+        0 calc(100% - 20px),
+        0 0,
+        2px 2px,
+        2px calc(100% - 21.5px),
+        21.5px calc(100% - 2px),
+        calc(100% - 2px) calc(100% - 2px),
+        calc(100% - 2px) 21.5px,
+        calc(100% - 21.5px) 2px,
+        2px 2px);
+}
+.errado {
+    animation: erradoc .3s ease-in-out 2;
+}
+.errado::before {
+    animation: errado .3s ease-in-out 2;
+}
+#certas {
+    position: absolute;
+    font-size: 1.2rem;
+    list-style: none;
+    padding: 0 0 0 3rem;
+    height: 3rem;
+    width: 5rem;
+    left: 100%;
+    background-color: var(--cor-ciano);
+    transform: translate(-100%, 0);
+    clip-path: polygon(
+        0 0,
+        3rem 100%,
+        100% 100%,
+        100% 0
+    );
+}
+
+/* Fim */
+
+#fim {
+    font-family: 'blender', Arial, Helvetica, sans-serif;
+    color: white;
+    background-image: url(../img/back-2077-2.jpg);
+    background-position: center;
+    background-size: cover;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    display: none;
+    z-index: 1;
+}
+#fim div {
+    background-color: rgba(0, 0, 0, 0.6);
+    text-align: center;
+    width: 20rem;
+    height: 5rem;
+    padding: 3rem;
+    margin: auto;
+    margin-top: 10rem;
+    clip-path: polygon(5rem 0,
+    100% 0,
+    calc(100% - 5rem) 100%,
+    0 100%);
+}
+#fim div::before {
+    content: "";
+    position: absolute;
+    height: inherit;
+    width: inherit;
+    top: 0;
+    left: 0;
+    background-color: var(--cor-ciano);
+    clip-path: polygon(
+        
+    );
+}
+#fim div::after {
+    content: "";
+    position: absolute;
+    height: inherit;
+    width: inherit;
+    top: 0;
+    left: 0;
+    background-color: var(--cor-ciano);
+    clip-path: polygon(
+        
+    );
+}
+#fim div ul li {
+    text-align: center;
+    list-style: none;
+}

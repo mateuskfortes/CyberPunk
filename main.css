@@ -1,134 +1,111 @@
-
 @keyframes glitch {
     0% {
-        -webkit-clip-path: polygon(0 2%,100% 2%,100% 5%,0 5%);
         clip-path: polygon(0 2%,100% 2%,100% 5%,0 5%);
         opacity: 1;
         transform: translateZ(0)
     }
 
     2% {
-        -webkit-clip-path: polygon(0 78%,100% 78%,100% 100%,0 100%);
         clip-path: polygon(0 78%,100% 78%,100% 100%,0 100%);
         transform: translate(-5px)
     }
 
     6% {
-        -webkit-clip-path: polygon(0 78%,100% 78%,100% 100%,0 100%);
         clip-path: polygon(0 78%,100% 78%,100% 100%,0 100%);
         transform: translate(5px)
     }
 
     8% {
-        -webkit-clip-path: polygon(0 78%,100% 78%,100% 100%,0 100%);
         clip-path: polygon(0 78%,100% 78%,100% 100%,0 100%);
         transform: translate(-5px)
     }
 
     9% {
-        -webkit-clip-path: polygon(0 78%,100% 78%,100% 100%,0 100%);
         clip-path: polygon(0 78%,100% 78%,100% 100%,0 100%);
         transform: translate(0)
     }
 
     10% {
-        -webkit-clip-path: polygon(0 54%,100% 54%,100% 44%,0 44%);
         clip-path: polygon(0 54%,100% 54%,100% 44%,0 44%);
         transform: translate3d(5px,0,0)
     }
 
     13% {
-        -webkit-clip-path: polygon(0 54%,100% 54%,100% 44%,0 44%);
         clip-path: polygon(0 54%,100% 54%,100% 44%,0 44%);
         transform: translateZ(0)
     }
 
     13.1% {
-        -webkit-clip-path: polygon(0 0,0 0,0 0,0 0);
         clip-path: polygon(0 0,0 0,0 0,0 0);
         transform: translate3d(5px,0,0)
     }
 
     15% {
-        -webkit-clip-path: polygon(0 60%,100% 60%,100% 40%,0 40%);
         clip-path: polygon(0 60%,100% 60%,100% 40%,0 40%);
         transform: translate3d(5px,0,0)
     }
 
     20% {
-        -webkit-clip-path: polygon(0 60%,100% 60%,100% 40%,0 40%);
         clip-path: polygon(0 60%,100% 60%,100% 40%,0 40%);
         transform: translate3d(-5px,0,0)
     }
 
     20.1% {
-        -webkit-clip-path: polygon(0 0,0 0,0 0,0 0);
         clip-path: polygon(0 0,0 0,0 0,0 0);
         transform: translate3d(5px,0,0)
     }
 
     25% {
-        -webkit-clip-path: polygon(0 85%,100% 85%,100% 40%,0 40%);
         clip-path: polygon(0 85%,100% 85%,100% 40%,0 40%);
         transform: translate3d(5px,0,0)
     }
 
     30% {
-        -webkit-clip-path: polygon(0 85%,100% 85%,100% 40%,0 40%);
         clip-path: polygon(0 85%,100% 85%,100% 40%,0 40%);
         transform: translate3d(-5px,0,0)
     }
 
     30.1% {
-        -webkit-clip-path: polygon(0 0,0 0,0 0,0 0);
         clip-path: polygon(0 0,0 0,0 0,0 0)
     }
 
     35% {
-        -webkit-clip-path: polygon(0 63%,100% 63%,100% 80%,0 80%);
         clip-path: polygon(0 63%,100% 63%,100% 80%,0 80%);
         transform: translate(-5px)
     }
 
     40% {
-        -webkit-clip-path: polygon(0 63%,100% 63%,100% 80%,0 80%);
         clip-path: polygon(0 63%,100% 63%,100% 80%,0 80%);
         transform: translate(5px)
     }
 
     45% {
-        -webkit-clip-path: polygon(0 63%,100% 63%,100% 80%,0 80%);
         clip-path: polygon(0 63%,100% 63%,100% 80%,0 80%);
         transform: translate(-5px)
     }
 
     50% {
-        -webkit-clip-path: polygon(0 63%,100% 63%,100% 80%,0 80%);
         clip-path: polygon(0 63%,100% 63%,100% 80%,0 80%);
         transform: translate(0)
     }
 
     55% {
-        -webkit-clip-path: polygon(0 10%,100% 10%,100% 0,0 0);
         clip-path: polygon(0 10%,100% 10%,100% 0,0 0);
         transform: translate3d(5px,0,0)
     }
 
     60% {
-        -webkit-clip-path: polygon(0 10%,100% 10%,100% 0,0 0);
         clip-path: polygon(0 10%,100% 10%,100% 0,0 0);
         opacity: 1;
         transform: translateZ(0)
     }
 
     60.1% {
-        -webkit-clip-path: polygon(0 0,0 0,0 0,0 0);
         clip-path: polygon(0 0,0 0,0 0,0 0);
         opacity: 1
     }
-
+    
     to {
-        -webkit-clip-path: polygon(0 0,0 0,0 0,0 0);
         clip-path: polygon(0 0,0 0,0 0,0 0);
         opacity: 1
     }
@@ -136,36 +113,37 @@
 
 @font-face {
     font-family: 'blender';
-    src: url('../fonts/blenderprobold.otf') format('truetype');
+    src: url('fonts/blenderprobold.otf') format('truetype');
 }
 
 @font-face {
     font-family: 'blenderl';
-    src: url('../fonts/BlenderPro-Book.woff2') format('truetype');
+    src: url('fonts/BlenderPro-Book.woff2') format('truetype');
 }
 
 :root {
     --cor-ciano: #00F0FF;
     --cor-amarelo: #FCEE09;
     --cor-vermelho: #FF003C;
+    --cor-verde: #1afe49;
 }
 
 * {
     padding: 0;
     margin: 0;
-    overflow: visible;
 }
 html {
-    font-size: 16px;
+    font-size: 10px;
 }
 body {
     overflow-x: hidden;
+    width: 100vw;
 }
 
 /* Cabeçalho */
 
 header {
-    background-image: url(../img/back-edgerunners.jpg);
+    background-image: url(img/back-edgerunners.jpg);
     background-position: center;
     background-size: cover;
     height: 100vh;
@@ -174,9 +152,9 @@ header {
 header::before {
     content: "";
     position: absolute;
-    height: 50vh;
-    width: 100%;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.774), rgba(0, 0, 0, 0));
+    height: 30vh;
+    width: 100vw;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
 }
 
 /* Menu */
@@ -394,16 +372,16 @@ nav > ul > li:nth-child(1):hover ~ .canto{
     display: block;
 }
 .bb {
-    padding: .7rem 2.7rem;
+    padding: 1.75vh 6.75vh;
     margin: auto;
-    margin-top: 2rem;
-    width: 5rem;
-    height: 2rem;
+    margin-top: 5vh;
+    width: 16.25vh;
+    height: 6.5vh;
     position: relative;
     color: black;
-    font-size: 1rem;
+    font-size: 3.2vh;
     font-family: 'blender', Arial, Helvetica, sans-serif;
-    background-image: url(../img/botao.svg);
+    background-image: url(img/botao.svg);
     background-repeat: no-repeat;
     background-size: contain;
     text-decoration: none;
@@ -412,15 +390,15 @@ nav > ul > li:nth-child(1):hover ~ .canto{
 }
 .bb span {
     animation: glitch 3.5s linear infinite;
-    top: 0rem;
-    left: 0rem;
+    top: 0;
+    left: 0;
     padding: inherit;
     width: inherit;
     position: absolute;
     color: inherit;
     font-size: inherit;
     font-family: 'blender', Arial, Helvetica, sans-serif;
-    background-image: url(../img/botao.svg);
+    background-image: url(img/botao.svg);
     background-repeat: no-repeat;
     background-size: contain;
     text-decoration: none;
@@ -437,10 +415,8 @@ nav > ul > li:nth-child(1):hover ~ .canto{
     height: 70vh;
     width: 40vh;
     margin-top: 20px;
-<<<<<<< HEAD
-=======
     font-family: 'blender', Arial, Helvetica, sans-serif;
-    background-image: url(../img/nightcity.webp);
+    background-image: url(img/nightcity.webp);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -451,7 +427,6 @@ nav > ul > li:nth-child(1):hover ~ .canto{
         20px 100%,
         0 calc(100% - 20px),
         0 20px);
->>>>>>> 57d1f5faff161fcaf45c286f60adeda8057db3c6
     position: relative;
     box-shadow: 1px 1px black;
 }
@@ -478,7 +453,6 @@ nav > ul > li:nth-child(1):hover ~ .canto{
         calc(100% - 2px) 2px,
         21.5px 2px);
 }
-<<<<<<< HEAD
 #lateral::after {
     content: "";
     position: absolute;
@@ -494,7 +468,7 @@ nav > ul > li:nth-child(1):hover ~ .canto{
         0 calc(100% - 20px),
         0 20px,
         20px 0);
-    background-image: url(../img/nightcity.webp);
+    background-image: url(img/nightcity.webp);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -502,28 +476,17 @@ nav > ul > li:nth-child(1):hover ~ .canto{
 }
 #lateral h1 {
     font-family: 'blender', Arial, Helvetica, sans-serif;
-    color: white;
-    margin: auto;
-}
-=======
-#lateral h1 {
+    font-size: 5vh;
     color: white;
     text-align: center;
-    margin-top: 5vh;
-}
-#lateral #botao {
-    width: 25vh;
-    height: 7vh;
-    font-size: 115%;
-    background-color: black;
-    clip-path: polygon(5vh 0,
-    100% 0,
-    calc(100% - 5vh) 100%,
-    0 100%);
-    text-align: center;
+    height: 10vh;
+    width: 28vh;
     margin: auto;
+    margin-top: 10vh;
+    position: relative;
+    line-height: 10vh;
 }
-#lateral #botao::before {
+#lateral h1::before {
     content: "";
     position: absolute;
     height: inherit;
@@ -531,12 +494,76 @@ nav > ul > li:nth-child(1):hover ~ .canto{
     top: 0;
     left: 0;
     background-color: var(--cor-amarelo);
+    clip-path: polygon(
+        0 2vh,
+        2px 2vh,
+        2px calc(100% - 2vh),
+        0 calc(100% - 2vh),
+        0 2vh,
+        
+        calc(100% - 2px) 2vh,
+        calc(100% - 2px) calc(100% - 2vh),
+        100% calc(100% - 2vh),
+        100% 2vh);
 }
 #lateral a {
+    display: block;
     color: var(--cor-ciano);
     text-decoration: none;
+    width: 27vh;
+    height: 6vh;
+    margin: auto;
+    margin-top: 30vh;
+    background-color: rgba(0, 0, 0, 0.471);
+    clip-path: polygon(3vh 0,
+    100% 0,
+    calc(100% - 3vh) 100%,
+    0 100%);
+    font-size: 3vh;
+    text-align: center;
+    position: relative;
+    line-height: 6vh;
 }
->>>>>>> 57d1f5faff161fcaf45c286f60adeda8057db3c6
+#lateral a::before {
+    content: "";
+    position: absolute;
+    height: inherit;
+    width: inherit;
+    top: 0;
+    left: 0;
+    background-color: var(--cor-ciano);
+    clip-path: polygon(
+        5vh 0,
+        100% 0,
+        100% 100%,
+        0 100%,
+        0 calc(100% - 15px),
+        13px calc(100% - 2px),
+        100% calc(100% - 2px),
+        100% 15px,
+        calc(100% - 13px) 2px,
+        0 2px);
+}
+#lateral a::after {
+    content: "";
+    position: absolute;
+    height: inherit;
+    width: inherit;
+    top: 0;
+    left: 0;
+    background-color: var(--cor-ciano);
+    clip-path: polygon(
+        5vh 2vh,
+        calc(5vh + 1px) 2vh,
+        calc(5vh + 1px) 4vh,
+        5vh 5vh,
+        5vh 2vh,
+        
+        calc(100% - 5vh - 1px) 2vh,
+        calc(100% - 5vh - 1px) 4vh,
+        calc(100% - 5vh) 4vh,
+        calc(100% - 5vh) 2vh);
+}
 
 /* Conteudo */
 
@@ -546,23 +573,22 @@ main {
 #conteudo {
     color: white;
     background-image: linear-gradient(to bottom, black, rgb(39, 39, 39));
-    height: 100vh;
     text-align: justify;
     font-family: 'blenderl', Arial, Helvetica, sans-serif;
     display: flex;
     flex-direction: column;
 }
-.paragrafo {
-    font-size: 150%;
-}
 
 /* introducao */
 
 .introducao {
-    height: 10rem;
+    height: 17rem;
+    width: 100vw;
     color: black;
     background-color: var(--cor-amarelo);
     text-align: center;
+    font-size: 1.9rem;
+    position: relative;
 }
 .introducao::before {
     content: "";
@@ -571,34 +597,88 @@ main {
     left: 0;
     width: 100%;
     height: 2rem;
-    background-image: url(../img/divisao-amarela.svg);
+    background-image: url(img/divisao-amarela.svg);
 }
 .introducao::after {
     content: "";
     position: absolute;
-    top: 8rem;
+    transform: translate(0, -100%);
+    top: 100%;
     left: 0;
     width: 100%;
     height: 2rem;
-    background-image: url(../img/divisao.svg);
+    background-image: url(img/divisao.svg);
 }
 .introducao div {
-    margin: 1rem 3rem;
+    height: 13rem;
+    width: 95vw;
+    margin: 1rem auto;
+    position: relative;
+}
+.introducao div::before {
+    content: "";
+    position: absolute;
+    height: inherit;
+    width: inherit;
+    top: 0;
+    left: 0;
+    background-color: black;
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        100% 100%,
+        0 100%,
+        0 calc(100% - 3rem),
+        2px calc(100% - 3rem),
+        2px calc(100% - 2px),
+        3rem calc(100% - 2px),
+        3rem 100%,
+        calc(100% - 3rem) 100%,
+        calc(100% - 3rem) calc(100% - 2px),
+        calc(100% - 2px) calc(100% - 2px),
+        calc(100% - 2px) calc(100% - 3rem),
+        100% calc(100% - 3rem),
+        100% 3rem,
+        calc(100% - 2px) 3rem,
+        calc(100% - 2px) 2px,
+        calc(100% - 3rem) 2px,
+        calc(100% - 3rem) 0,
+        calc(50% + 2rem) 0,
+        calc(50% + 2rem) 2px,
+        calc(50% - 2rem) 2px,
+        calc(50% - 2rem) 0,
+        3rem 0,
+        3rem 2px,
+        2px 2px,
+        2px 3rem,
+        0 3rem
+    );
+}
+.introducao > div > p {
+    padding: 3rem;
 }
 
-/* 1 paragrafo */
+/* Grid */
 
-.paragrafo:nth-child(2) {
-    margin: 5rem;
-    width: 42rem;
-    height: 20rem;
+#grid {
+    width: 96rem;
+    margin: auto;
+    margin-top: 7rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5rem;
 }
-.paragrafo:nth-child(2)::before {
+#grid > div {
+    width: 30rem;
+    height: 30rem;
+    margin: auto;
+    position: relative;
+}
+#grid > div::before {
     content: "";
     position: absolute;
     width: inherit;
     height: inherit;
-    background-color: var(--cor-ciano);
     clip-path: polygon(
         0 0,
         calc(100% - 20px) 0,
@@ -614,7 +694,57 @@ main {
         calc(100% - 2px) 21.5px,
         calc(100% - 21.5px) 2px,
         2px 2px);
+    z-index: 1;
 }
-.paragrafo:nth-child(2) div {
-    padding: 1rem;
+#grid > .cp2077::before {
+    background-color: var(--cor-vermelho);
+}
+#grid > .edgerunners::before {
+    background-color: var(--cor-verde);
+}
+#grid > div::after {
+    content: "";
+    position: absolute;
+    height: inherit;
+    width: inherit;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-position: center;
+    clip-path: polygon(
+        0 0,
+        calc(100% - 20px) 0,
+        100% 20px,
+        100% 100%,
+        20px 100%,
+        0 calc(100% - 20px));
+}
+
+#grid > div:nth-child(1)::after {
+    background-image: url(img/personagens/v.webp);
+}
+#grid > div:nth-child(2)::after {
+    background-image: url(img/personagens/johnny.webp);
+}
+#grid > div:nth-child(3)::after {
+    background-image: url(img/personagens/jackie.webp);
+}
+#grid > div:nth-child(4)::after {
+    background-image: url(img/personagens/judy.webp);
+}
+#grid > div:nth-child(5)::after {
+    background-image: url(img/personagens/david.webp);
+}
+#grid > div:nth-child(6)::after {
+    background-image: url(img/personagens/lucy.webp);
+}
+#grid > div:nth-child(7)::after {
+    background-image: url(img/personagens/rebecca.webp);
+}
+#grid > div:nth-child(8)::after {
+    background-image: url(img/personagens/kiwi.webp);
+}
+
+footer {
+    height: 50rem;
 }

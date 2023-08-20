@@ -1,9 +1,4 @@
-const equiz = document.querySelector(".quiz")
-const epergunta = equiz.querySelector(".pergunta")
-const eresposta = equiz.querySelector(".resposta")
-const fim = document.querySelector("#fim")
-
-const quiz = [
+[
     {
         "pergunta" : "Quando foi lançando CyberPunk 2077?",
         "alternativa" : ["25/01/2021","09/11/2019","10/12/2020","26/11/2020"],
@@ -25,29 +20,3 @@ const quiz = [
         "resposta" : 2
     }
 ]
-
-let npergunta = 0
-let c = 0
-
-function pergunta(np) {
-    if (c >= 4) {
-        fim.style.display = "block"
-    }
-    epergunta.innerHTML = quiz[np].pergunta
-    eresposta.innerHTML = ""
-    quiz[npergunta].alternativa.forEach(alt => eresposta.innerHTML += `<button>${alt}</button>`)
-}
-
-eresposta.addEventListener("click", ev => {
-const alternativaClicada = ev.target;
-const arrayAlternativas = [...eresposta.children]
-const Clicada = arrayAlternativas.indexOf(alternativaClicada)
-if (Clicada == quiz[npergunta].resposta) {
-    ++c
-    pergunta(++npergunta)
-    return
-}
-alert("ERRADO!!!!!")
-})
-
-pergunta(0)
