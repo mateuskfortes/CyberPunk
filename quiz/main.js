@@ -32,7 +32,12 @@ async function main() {
     const arrayAlternativas = [...eresposta.children]
     const Clicada = arrayAlternativas.indexOf(alternativaClicada)
     if (Clicada == quiz[npergunta].resposta) {
-        equestao.innerHTML = ++c + 1
+        equestao.classList.add("troca")
+        equestao.setAttribute('data-content', ++c + 1)
+        equestao.innerHTML = c + 1
+        setTimeout(() => {
+            equestao.classList.remove("troca");
+        }, 500);
         contagem[0].innerHTML = ++certo
         pergunta(++npergunta)
         return
