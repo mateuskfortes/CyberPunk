@@ -168,7 +168,7 @@ nav {
     font-family: 'blenderl', Arial, Helvetica, sans-serif;
     margin: 20px 40px 0 auto;
     height: 40px;
-    width: 500px;
+    width: 580px;
     backdrop-filter: blur(2px);
 }
 nav::before {
@@ -208,8 +208,9 @@ nav > ul {
     display: flex;
     margin-left: 20px;
 }
-nav > ul > li {
+nav > ul > li, nav > ul > a {
     padding: 10px;
+    padding-right: 20px;
     position: relative;
     list-style: none;
 }
@@ -263,7 +264,12 @@ nav > ul > li > ul > li::before {
     height: 1px;
     width: 5px;
 }
-nav > ul > li:nth-child(5) {
+nav a {
+    text-decoration: none;
+    color: inherit;
+    font-family: 'blender', Arial, Helvetica, sans-serif;
+}
+nav > ul > a {
     color: black;
     background-color: var(--cor-ciano);
     margin-left: -1px;
@@ -271,11 +277,11 @@ nav > ul > li:nth-child(5) {
     width: 120px;
     clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 0 100%);
 }
-nav > ul > li:nth-child(4):hover span::after {
+nav > ul > li:nth-child(4):hover ~ a::after {
     content: "";
     position: absolute;
     top: 10px;
-    left: 99%;
+    left: 0;
     height: 20px;
     width: 1px;
     background-color: black;
@@ -290,6 +296,21 @@ nav > ul > li span::before {
     width: 1px;
     background-color: var(--cor-ciano);
 }
+nav > ul > li span::after {
+    content: "";
+    position: absolute;
+    top: 17px;
+    left: calc(100% - 15px);
+    height: 3px;
+    width: 6px;
+    background-color: var(--cor-ciano);
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        50% 100%
+    );
+    transition: .3s;
+}
 nav > ul > li:hover {
     color: black;
     background-color: var(--cor-ciano);
@@ -297,9 +318,6 @@ nav > ul > li:hover {
 }
 nav > ul > li:hover > ul {
     visibility: visible;
-}
-nav > ul > li:nth-child(5):hover {
-    cursor: pointer;
 }
 nav > ul > li:hover span::before {
     display: none;
@@ -744,6 +762,8 @@ main {
 #grid > div:nth-child(8)::after {
     background-image: url(img/personagens/kiwi.webp);
 }
+
+/* Roda pé */
 
 footer {
     height: 50rem;

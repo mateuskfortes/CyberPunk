@@ -1,10 +1,11 @@
 const equiz = document.querySelector(".quiz")
 const equestao = equiz.querySelector("#numero")
+const spanquestao = equestao.querySelector("span")
 const epergunta = equiz.querySelector("#pergunta")
 const eresposta = equiz.querySelector("#resposta")
 const contagem = equiz.querySelectorAll(".ct")
 const contagemf = document.querySelectorAll(".cfim")
-const fim = document.querySelector("#fim")
+const fim = document.querySelector(".fim")
 
 async function main() {
     const requisicao = await fetch("quiz.json")
@@ -17,7 +18,7 @@ async function main() {
 
     function pergunta(np) {
         if (c >= quiz.length) {
-            fim.style.display = "block"
+            fim.classList.add("visivel")
             contagemf[0].innerHTML = certo
             contagemf[1].innerHTML = errado
             return
@@ -32,11 +33,11 @@ async function main() {
     const arrayAlternativas = [...eresposta.children]
     const Clicada = arrayAlternativas.indexOf(alternativaClicada)
     if (Clicada == quiz[npergunta].resposta) {
-        equestao.classList.add("troca")
+        equiz.classList.add("troca")
         equestao.setAttribute('data-content', ++c + 1)
-        equestao.innerHTML = c + 1
+        spanquestao.innerHTML = c + 1
         setTimeout(() => {
-            equestao.classList.remove("troca");
+            equiz.classList.remove("troca");
         }, 500);
         contagem[0].innerHTML = ++certo
         pergunta(++npergunta)

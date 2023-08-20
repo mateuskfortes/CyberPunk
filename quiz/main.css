@@ -1,113 +1,63 @@
 @keyframes glitch {
     0% {
         clip-path: polygon(0 2%,100% 2%,100% 5%,0 5%);
-        opacity: 1;
-        transform: translateZ(0)
     }
-
     2% {
         clip-path: polygon(0 98%,100% 98%,100% 100%,0 100%);
         transform: translate(-5px)
     }
-
     6% {
-        clip-path: polygon(0 98%,100% 98%,100% 100%,0 100%);
         transform: translate(5px)
     }
-
     8% {
-        clip-path: polygon(0 98%,100% 98%,100% 100%,0 100%);
         transform: translate(-5px)
     }
-
     9% {
-        clip-path: polygon(0 98%,100% 98%,100% 100%,0 100%);
         transform: translate(0)
     }
-
     10% {
         clip-path: polygon(0 54%,100% 54%,100% 44%,0 44%);
-        transform: translate3d(5px,0,0)
+        transform: translate(5px,0)
     }
-
-    13% {
-        clip-path: polygon(0 54%,100% 54%,100% 44%,0 44%);
-        transform: translateZ(0)
-    }
-
     13.1% {
         clip-path: polygon(0 0,0 0,0 0,0 0);
-        transform: translate3d(5px,0,0)
     }
-
     15% {
         clip-path: polygon(0 60%,100% 60%,100% 50%,0 50%);
-        transform: translate3d(5px,0,0)
     }
-
-    20% {
-        transform: translate3d(-5px,0,0)
-    }
-
     20.1% {
         clip-path: polygon(0 0,0 0,0 0,0 0);
-        transform: translate3d(5px,0,0)
     }
-
     25% {
         clip-path: polygon(0 85%,100% 85%,100% 70%,0 70%);
-        transform: translate3d(5px,0,0)
     }
-
     30% {
-        transform: translate3d(-5px,0,0)
+        transform: translate(-5px,0)
     }
-
     30.1% {
         clip-path: polygon(0 0,0 0,0 0,0 0)
     }
-
     35% {
         clip-path: polygon(0 63%,100% 63%,100% 80%,0 80%);
-        transform: translate(-5px)
     }
-
     40% {
-        clip-path: polygon(0 63%,100% 63%,100% 80%,0 80%);
         transform: translate(5px)
     }
-
     45% {
-        clip-path: polygon(0 63%,100% 63%,100% 80%,0 80%);
         transform: translate(-5px)
     }
-
     50% {
-        clip-path: polygon(0 63%,100% 63%,100% 80%,0 80%);
         transform: translate(0)
     }
-
     55% {
         clip-path: polygon(0 10%,100% 10%,100% 0,0 0);
-        transform: translate3d(5px,0,0)
+        transform: translate(5px,0)
     }
-
-    60% {
-        clip-path: polygon(0 10%,100% 10%,100% 0,0 0);
-        opacity: 1;
-        transform: translateZ(0)
-    }
-
     60.1% {
         clip-path: polygon(0 0,0 0,0 0,0 0);
-        opacity: 1
-    }
-    
-    to {
-        clip-path: polygon(0 0,0 0,0 0,0 0);
-        opacity: 1
     }
 }
+
 @keyframes errado {
     0% {
         background-color: var(--cor-vermelho);
@@ -155,10 +105,10 @@ html {
     font-size: 20px;
 }
 body {
-    background-image: url(../img/back-2077.jpg);
+    background-image: url(../img/back-2077-5.jpg);
     background-position: center;
     background-size: cover;
-    overflow-x: hidden;
+    overflow: hidden;
     width: 100vw;
 }
 section {
@@ -168,10 +118,19 @@ section {
     font-size: 1.6rem;
 }
 .quiz {
-     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.554), rgba(0, 0, 0, 0));
+     background-color: rgba(0, 0, 0, 0.4);
+     height: 100vh;
 }
+
 .quiz > div:nth-child(1) {
     display: flex;
+}
+.quiz > div > div::before {
+    content: "";
+    position: absolute;
+    width: 100vw;
+    height: 5px;
+    background-color: var(--cor-ciano);
 }
 #numero {
     height: 3rem;
@@ -192,22 +151,41 @@ section {
     position: absolute;
     height: inherit;
     width: inherit;
+    background-color: var(--cor-ciano);
 }
-.troca::before {
+
+/* Animação troca de pergunta */ 
+
+.troca > div > div > h1::before {
     animation: glitch 1s;
 }
+.troca #pergunta {
+    animation: glitch .2s;
+}
+
+/* Pergunta */
+
 #pergunta {
     color: white;
-    margin-top: 1rem;
-    margin-right: 9rem;
+    font-size: 2rem;
+    font-family: 'blenderl', Arial, Helvetica, sans-serif;
+    text-align: justify;
+    width: 100%;
+    margin-top: 1.5rem;
 }
 
 /* Alternativas */
 
 #resposta {
     display: grid;
-    margin-top: 7rem;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: 7rem 7rem;
+    gap: .5rem;
+    position: fixed;
+    top: calc(100% - 3rem);
+    transform: translate(0, -100%);
+    height: 14rem;
+    width: 100%;
 }
 .quiz button {
     font-size: 1.2rem;
@@ -256,22 +234,29 @@ section {
         calc(100% - 21.5px) 2px,
         2px 2px);
 }
+
+/* sinalização de erro ou acerto */
+
 .errado {
     animation: erradoc .2s ease-in-out 2;
 }
 .errado::before {
     animation: errado .2s ease-in-out 2;
 }
+
+/* Contagem de acertos */
+
 #certas {
-    position: absolute;
+    position: relative;
     font-size: 1.2rem;
     list-style: none;
+    margin-top: 3px;
     padding: 0 0 0 3rem;
     height: 3rem;
-    width: 5rem;
-    left: 100%;
-    background-color: var(--cor-ciano);
-    transform: translate(-100%, 0);
+    min-width: 5.5rem;
+    color: var(--cor-ciano);
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(2px);
     clip-path: polygon(
         0 0,
         3rem 100%,
@@ -279,59 +264,217 @@ section {
         100% 0
     );
 }
+#certas::before {
+    content: "";
+    position: absolute;
+    height: inherit;
+    padding: inherit;
+    min-width: inherit;
+    left: 0;
+    background-color: var(--cor-ciano);
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        100% 100%,
+        0 100%,
+        0 0,
+        
+        8px 2px,
+        calc(3rem + 1.5px) calc(100% - 4px),
+        100% calc(100% - 4px),
+        100% 2px, 
+        8px 2px);
+}
 
-/* Fim */
+/* Resultado */
 
-#fim {
+.fim {
     font-family: 'blender', Arial, Helvetica, sans-serif;
     color: white;
-    background-image: url(../img/back-2077-2.jpg);
+    background-image: url(../img/back-2077-5.jpg);
     background-position: center;
     background-size: cover;
+    background-repeat: no-repeat;
     position: fixed;
     height: 100%;
     width: 100%;
-    display: none;
+    z-index: -1;
+}
+.visivel{
     z-index: 1;
 }
-#fim div {
-    background-color: rgba(0, 0, 0, 0.6);
+#back {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+#back .resultado {
     text-align: center;
-    width: 20rem;
+    width: 15rem;
     height: 5rem;
     padding: 3rem;
     margin: auto;
     margin-top: 10rem;
-    clip-path: polygon(5rem 0,
-    100% 0,
-    calc(100% - 5rem) 100%,
-    0 100%);
+    background-color: rgba(0, 0, 0, 0.5);
+    clip-path: polygon(
+        0 0,
+        2rem .4rem,
+        calc(100% - 2rem) .4rem,
+        100% 0,
+        
+        100% 100%,
+        calc(100% - 2rem) calc(100% - .4rem),
+        2rem calc(100% - .4rem),
+        0 100%
+        );
+    position: relative;
+    opacity: 0;
 }
-#fim div::before {
+.visivel > #back .resultado {
+    opacity: 1;
+    transition: 1s;
+}
+#back .resultado::before {
     content: "";
     position: absolute;
+    padding: inherit;
     height: inherit;
     width: inherit;
     top: 0;
     left: 0;
     background-color: var(--cor-ciano);
     clip-path: polygon(
-        
+        0 0,
+        100% 0,
+        calc(100% - 2.5rem) 2rem,
+        calc(100% - 1.5rem) .7rem,
+        1.5rem .7rem,
+        2.5rem 2rem,
+        0 0,
+
+        0 100%,
+        100% 100%,
+        calc(100% - 2.5rem) calc(100% - 2rem),
+        calc(100% - 1.5rem) calc(100% - .7rem),
+        1.5rem calc(100% - .7rem),
+        2.5rem calc(100% - 2rem),
+        0 100%
     );
 }
-#fim div::after {
+#back .resultado::after {
     content: "";
     position: absolute;
+    padding: inherit;
     height: inherit;
     width: inherit;
     top: 0;
     left: 0;
     background-color: var(--cor-ciano);
     clip-path: polygon(
-        
+        4rem 3rem,
+        calc(4rem + 2px) 3rem,
+        calc(4rem + 2px) calc(100% - 3rem),
+        4rem calc(100% - 3rem),
+        4rem 3rem,
+
+        calc(100% - 4rem - 2px) 3rem,
+        calc(100% - 4rem - 2px) calc(100% - 3rem),
+        calc(100% - 4rem) calc(100% - 3rem),
+        calc(100% - 4rem) 3rem
     );
 }
-#fim div ul li {
+#back .resultado ul li {
     text-align: center;
     list-style: none;
+}
+
+/* Botao de voltar */
+
+.voltar {
+    display: flex;
+    color: white;
+    height: 3rem;
+    width: 7rem;
+    margin: 0 auto auto auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    clip-path: polygon(
+        0 0,
+        calc(100% - 20px) 0,
+        100% 20px,
+        100% 100%,
+        20px 100%,
+        0 calc(100% - 20px)
+    );
+    text-decoration: none;
+    opacity: 0;
+    cursor: pointer;
+    position: relative;
+}
+.voltar::before {
+    content: "";
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    top: 0;
+    left: 0;
+    background-color: var(--cor-ciano);
+    clip-path: polygon(
+        0 0,
+        calc(100% - 20px) 0,
+        100% 20px,
+        100% 100%,
+        20px 100%,
+        0 calc(100% - 20px),
+        0 0,
+        2px 2px,
+        2px calc(100% - 21.5px),
+        21.5px calc(100% - 2px),
+        calc(100% - 2px) calc(100% - 2px),
+        calc(100% - 2px) 21.5px,
+        calc(100% - 21.5px) 2px,
+        2px 2px);
+}
+.voltar span {
+    display: block;
+    margin: auto;
+    margin-left: 2.5rem;
+}
+.voltar span::before {
+    content: "";
+    position: absolute;
+    width: 2rem;
+    height: 1rem;
+    top: 1rem;
+    left: 1rem;
+    background-color: var(--cor-ciano);
+    clip-path: polygon(
+        0 50%,
+        6px 0,
+        calc(6px + 3px) 0,
+        3px 50%,
+        calc(6px + 3px) 100%,
+        6px 100%,
+        0 50%,
+        
+        6px 50%,
+        12px 0,
+        calc(12px + 3px) 0,
+        9px 50%,
+        calc(12px + 3px) 100%,
+        12px 100%,
+        6px 50%,
+
+        12px 50%,
+        18px 0,
+        calc(18px + 3px) 0,
+        15px 50%,
+        calc(18px + 3px) 100%,
+        18px 100%,
+        12px 50%
+    );
+}
+.visivel > #back > .voltar {
+    opacity: 1;
+    transition: 3s;
 }
