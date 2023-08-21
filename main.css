@@ -111,14 +111,19 @@
     }
 }
 @keyframes nightcity {
-    from {
+    0% {
+        background-position: left;
+        animation-delay: 5s;
         background-image: url(img/nightcity.webp);
     }
-    47% {
-        background-image: url(img/nightcity.webp);
-    }
-    54% {
+    60% {
         background-image: url(img/nightcity.jpg);
+        background-position: right;
+        animation-delay: 5s;
+        opacity: 0.8;
+    }
+    70% {
+        opacity: 1;
     }
     to {
         background-image: url(img/nightcity.jpg);
