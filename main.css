@@ -116,17 +116,28 @@
         animation-delay: 5s;
         background-image: url(img/nightcity.webp);
     }
-    60% {
+    30% {
         background-image: url(img/nightcity.jpg);
         background-position: right;
         animation-delay: 5s;
-        opacity: 0.8;
+        opacity: 0.9;
     }
-    70% {
+    50% {
         opacity: 1;
+        background-image: url(img/nightcity.jpg);
+        background-position: right;
+        animation-delay: 5s;
+    }
+    80% {
+        background-image: url(img/nightcity.webp);
+        background-position: left;
+        animation-delay: 5s;
+        opacity: 0.9;
     }
     to {
-        background-image: url(img/nightcity.jpg);
+        background-image: url(img/nightcity.webp);
+        background-position: left;
+        opacity: 1;
     }
 }
 
