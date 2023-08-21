@@ -110,6 +110,20 @@
         opacity: 1
     }
 }
+@keyframes nightcity {
+    from {
+        background-image: url(img/nightcity.webp);
+    }
+    47% {
+        background-image: url(img/nightcity.webp);
+    }
+    54% {
+        background-image: url(img/nightcity.jpg);
+    }
+    to {
+        background-image: url(img/nightcity.jpg);
+    }
+}
 
 @font-face {
     font-family: 'blender';
@@ -170,6 +184,7 @@ nav {
     height: 40px;
     width: 580px;
     backdrop-filter: blur(2px);
+    z-index: 2;
 }
 nav::before {
     content: "";
@@ -219,7 +234,7 @@ nav > ul > li > ul {
     width: 150px;
     height: 70px;
     color: white;
-    background-color: rgba(0, 0, 0, 0.383);
+    background-color: rgba(0, 0, 0, 0.8);
     top: 100%;
     left: 0;
     backdrop-filter: blur(2px);
@@ -428,16 +443,11 @@ nav > ul > li:nth-child(1):hover ~ .canto{
 #baixo {
     display: flex;
 }
-
 #lateral {
     height: 70vh;
-    width: 40vh;
+    width: 20vh;
     margin-top: 20px;
     font-family: 'blender', Arial, Helvetica, sans-serif;
-    background-image: url(img/nightcity.webp);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
     clip-path: polygon(
         20px 0,
         100% 0,
@@ -445,6 +455,7 @@ nav > ul > li:nth-child(1):hover ~ .canto{
         20px 100%,
         0 calc(100% - 20px),
         0 20px);
+    transition: .5s;
     position: relative;
     box-shadow: 1px 1px black;
 }
@@ -453,7 +464,7 @@ nav > ul > li:nth-child(1):hover ~ .canto{
     position: absolute;
     height: inherit;
     width: inherit;
-    background-color: var(--cor-amarelo);
+    background-color: var(--cor-vermelho);
     clip-path: polygon(
         20px 0,
         100% 0,
@@ -486,32 +497,21 @@ nav > ul > li:nth-child(1):hover ~ .canto{
         0 calc(100% - 20px),
         0 20px,
         20px 0);
-    background-image: url(img/nightcity.webp);
+    animation: nightcity 10s infinite;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     z-index: -1;
 }
-#lateral h1 {
-    font-family: 'blender', Arial, Helvetica, sans-serif;
-    font-size: 5vh;
-    color: white;
-    text-align: center;
-    height: 10vh;
+#lateral:hover {
+    width: 40vh;
+    transition: 1s;
+}
+#lateral:hover h1 {
     width: 28vh;
-    margin: auto;
-    margin-top: 10vh;
-    position: relative;
     line-height: 10vh;
 }
-#lateral h1::before {
-    content: "";
-    position: absolute;
-    height: inherit;
-    width: inherit;
-    top: 0;
-    left: 0;
-    background-color: var(--cor-amarelo);
+#lateral:hover h1::before {
     clip-path: polygon(
         0 2vh,
         2px 2vh,
@@ -524,6 +524,46 @@ nav > ul > li:nth-child(1):hover ~ .canto{
         100% calc(100% - 2vh),
         100% 2vh);
 }
+#lateral:hover a {
+    opacity: 1;
+    transition: 1s;
+}
+#lateral:hover a::after {
+    opacity: 1;
+}
+#lateral h1 {
+    font-family: 'blender', Arial, Helvetica, sans-serif;
+    font-size: 5vh;
+    color: white;
+    text-align: center;
+    height: 10vh;
+    width: 20vh;
+    margin: auto;
+    margin-top: 10vh;
+    position: relative;
+    line-height: 5vh;
+}
+#lateral h1::before {
+    content: "";
+    position: absolute;
+    height: inherit;
+    width: inherit;
+    top: 0;
+    left: 0;
+    background-color: var(--cor-vermelho);
+    clip-path: polygon(
+        3rem 0,
+        calc(100% - 3rem) 0,
+        calc(100% - 3rem) 1px,
+        3rem 1px,
+        3rem 0,
+
+        3rem calc(100% - 1px),
+        calc(100% - 3rem) calc(100% - 1px),
+        calc(100% - 3rem) 100%,
+        3rem 100%
+    );
+}
 #lateral a {
     display: block;
     color: var(--cor-ciano);
@@ -532,15 +572,17 @@ nav > ul > li:nth-child(1):hover ~ .canto{
     height: 6vh;
     margin: auto;
     margin-top: 30vh;
-    background-color: rgba(0, 0, 0, 0.471);
+    background-color: rgba(0, 0, 0, 0.8);
     clip-path: polygon(3vh 0,
     100% 0,
     calc(100% - 3vh) 100%,
     0 100%);
-    font-size: 3vh;
+    transition: .5s;
+    font-size: 1.8vh;
     text-align: center;
     position: relative;
     line-height: 6vh;
+    opacity: 0;
 }
 #lateral a::before {
     content: "";
@@ -574,13 +616,14 @@ nav > ul > li:nth-child(1):hover ~ .canto{
         5vh 2vh,
         calc(5vh + 1px) 2vh,
         calc(5vh + 1px) 4vh,
-        5vh 5vh,
+        5vh 4vh,
         5vh 2vh,
         
         calc(100% - 5vh - 1px) 2vh,
         calc(100% - 5vh - 1px) 4vh,
         calc(100% - 5vh) 4vh,
         calc(100% - 5vh) 2vh);
+    opacity: 0;
 }
 
 /* Conteudo */
@@ -766,13 +809,23 @@ main {
 
 .texto, .texto2 {
     position: absolute;
-    font-size: 2rem;
-    background-color: rgba(0, 0, 0, 0.8);
-    height: 17rem;
+    height: 20rem;
     width: 50rem;
     top: 100%;
     left: 50%;
     transform: translate(-50%, 0);
+    font-size: 2rem;
+    background-color: rgba(0, 0, 0, 0.8);
+    clip-path: polygon(
+        calc(50% - 15rem + 20px) 0,
+        calc(50% + 15rem) 0,
+        calc(50% + 17rem) 1rem,
+        100% 1rem,
+        100% 100%,
+        0 100%,
+        0 1rem,
+        calc(50% - 17rem) 1rem
+    );
     z-index: 2;
     display: none;
     opacity: 0;
@@ -793,12 +846,12 @@ main {
         calc(50% - 17rem) 1rem,
         calc(50% - 15rem + 20px) 0,
 
-        calc(50% - 15rem + 20px) 3rem,
-        2px 3rem,
+        calc(50% - 15rem + 20px) 2rem,
+        2px 2rem,
         2px calc(100% - 2px),
         calc(100% - 2px) calc(100% - 2px),
-        calc(100% - 2px) 3rem,
-        calc(50% - 15rem + 20px) 3rem
+        calc(100% - 2px) 2rem,
+        calc(50% - 15rem + 20px) 2rem
         );
     opacity: inherit;
 }
@@ -809,7 +862,7 @@ main {
     background-color: var(--cor-verde);
 }
 .texto p, .texto2 p {
-    margin: 3rem;
+    margin: 4rem 3rem;
     color: var(--cor-ciano);
 }
 #grid .cp2077:hover .texto, #grid .edgerunners:hover .texto2{
