@@ -367,23 +367,24 @@ nav > ul > li:nth-child(1):hover ~ .canto{
 /* Selecionar o cyberpunk */
 
 .selecionar {
-    width: 70vw;
     height: 70vh;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin: 10vh auto;
+    grid-template-rows: 1fr 1fr;
+    margin: 10vh auto 10vh 0;
 }
 .selecionar > div {
-    width: 30vw;
-    height: 20vw;
+    width: 25rem;
+    height: 95%;
     background-color: rgba(0, 0, 0, 0.6);
     margin: auto;
-    clip-path: polygon(0 0,
+    clip-path: polygon(
+        0 0,
         calc(100% - 20px) 0,
         100% 20px,
-        100% 100%,
-        20px 100%,
-        0 calc(100% - 20px));
+        100% calc(100% - 20px),
+        calc(100% - 20px) 100%,
+        0 100%
+    );
     transition: .5s;
 }
 .selecionar > div:hover {
@@ -405,6 +406,7 @@ nav > ul > li:nth-child(1):hover ~ .canto{
         20px 100%,
         0 calc(100% - 20px),
         0 0,
+        
         2px 2px,
         2px calc(100% - 21.5px),
         21.5px calc(100% - 2px),
@@ -414,35 +416,32 @@ nav > ul > li:nth-child(1):hover ~ .canto{
         2px 2px);
 }
 .selecionar > div img {
-    width: 24vw;
-    height: 6vw;
+    width: 20rem;
+    height: 5rem;
     margin: auto;
     margin-top: 10px;
     display: block;
 }
 .bb {
-    padding: 1.75vh 6.75vh;
+    padding: 1.4rem 5.4rem;
     margin: auto;
-    margin-top: 5vh;
-    width: 16.25vh;
-    height: 6.5vh;
+    margin-top: 5vh;  
     position: relative;
     color: black;
-    font-size: 3.2vh;
+    font-size: 2rem;
     font-family: 'blender', Arial, Helvetica, sans-serif;
     background-image: url(img/botao.svg);
     background-repeat: no-repeat;
     background-size: contain;
     text-decoration: none;
     list-style: none;
-    display: block;
+    display: inline-block;
 }
 .bb span {
     animation: glitch 3.5s linear infinite;
     top: 0;
     left: 0;
     padding: inherit;
-    width: inherit;
     position: absolute;
     color: inherit;
     font-size: inherit;
