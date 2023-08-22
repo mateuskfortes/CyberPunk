@@ -368,15 +368,19 @@ nav > ul > li:nth-child(1):hover ~ .canto{
 
 .selecionar {
     height: 70vh;
+    width: 100%;
     display: grid;
     grid-template-rows: 1fr 1fr;
     margin: 10vh auto 10vh 0;
 }
 .selecionar > div {
     width: 25rem;
-    height: 95%;
-    background-color: rgba(0, 0, 0, 0.6);
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.8);
     margin: auto;
+    margin-left: 0;
     clip-path: polygon(
         0 0,
         calc(100% - 20px) 0,
@@ -385,41 +389,52 @@ nav > ul > li:nth-child(1):hover ~ .canto{
         calc(100% - 20px) 100%,
         0 100%
     );
+    position: relative;
     transition: .5s;
 }
 .selecionar > div:hover {
-    transform: scale(1.2);
+    width: 70rem;
+    height: 50rem;
     transition: 1s;
     z-index: 1;
+}
+.selecionar > div:hover img {
+    width: 40rem;
+    height: 10rem;
+    transition: 1s;
+}
+.selecionar > div:hover .bb {
+    display: inline-block;
 }
 .selecionar > div::before {
     content: "";
     position: absolute;
+    top: 0;
+    left: 0;
     width: inherit;
     height: inherit;
-    background-color: var(--cor-amarelo);
     clip-path: polygon(
         0 0,
         calc(100% - 20px) 0,
         100% 20px,
-        100% 100%,
-        20px 100%,
-        0 calc(100% - 20px),
+        100% calc(100% - 20px),
+        calc(100% - 20px) 100%,
+        0 100%,
         0 0,
         
-        2px 2px,
-        2px calc(100% - 21.5px),
-        21.5px calc(100% - 2px),
-        calc(100% - 2px) calc(100% - 2px),
+        0 2px,
+        0 calc(100% - 2px),
+        calc(100% - 21.5px) calc(100% - 2px),
+        calc(100% - 2px) calc(100% - 21.5px),
         calc(100% - 2px) 21.5px,
         calc(100% - 21.5px) 2px,
-        2px 2px);
+        0 2px);
+    background-color: var(--cor-amarelo);
 }
 .selecionar > div img {
     width: 20rem;
     height: 5rem;
     margin: auto;
-    margin-top: 10px;
     display: block;
 }
 .bb {
@@ -435,7 +450,7 @@ nav > ul > li:nth-child(1):hover ~ .canto{
     background-size: contain;
     text-decoration: none;
     list-style: none;
-    display: inline-block;
+    display: none;
 }
 .bb span {
     animation: glitch 3.5s linear infinite;
@@ -470,7 +485,7 @@ nav > ul > li:nth-child(1):hover ~ .canto{
         20px 100%,
         0 calc(100% - 20px),
         0 20px);
-    transition: .5s;
+    transition: .3s;
     position: relative;
     box-shadow: 1px 1px black;
 }
@@ -520,7 +535,7 @@ nav > ul > li:nth-child(1):hover ~ .canto{
 }
 #lateral:hover {
     width: 40vh;
-    transition: 1s;
+    transition: .7s;
 }
 #lateral:hover h1 {
     width: 28vh;
@@ -654,6 +669,18 @@ main {
     display: flex;
     flex-direction: column;
     z-index: -2;
+}
+#conteudo .loading {
+    height: 10rem;
+    width: 20rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: black;
+    background-color: var(--cor-amarelo);
+    position: absolute;
+    top: -10rem;
 }
 
 /* introducao */

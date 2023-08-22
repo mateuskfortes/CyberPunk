@@ -159,11 +159,8 @@ section {
 
 /* Animação troca de pergunta */ 
 
-.troca > div > div > h1::before {
-    animation: glitch 1s;
-}
 .troca #pergunta {
-    animation: glitch .2s;
+    animation: glitch .3s;
 }
 
 /* Pergunta */
