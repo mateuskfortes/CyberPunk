@@ -110,6 +110,66 @@
         opacity: 1
     }
 }
+@keyframes glitchc {
+    0% {
+        clip-path: polygon(0 2%,100% 2%,100% 5%,0 5%);
+    }
+    2% {
+        clip-path: polygon(0 98%,100% 98%,100% 100%,0 100%);
+        transform: translate(-80px)
+    }
+    6% {
+        transform: translate(80px)
+    }
+    8% {
+        transform: translate(-80px)
+    }
+    9% {
+        transform: translate(0)
+    }
+    10% {
+        clip-path: polygon(0 54%,100% 54%,100% 44%,0 44%);
+        transform: translate(80px,0)
+    }
+    13.1% {
+        clip-path: polygon(0 0,0 0,0 0,0 0);
+    }
+    15% {
+        clip-path: polygon(0 60%,100% 60%,100% 50%,0 50%);
+    }
+    20.1% {
+        clip-path: polygon(0 0,0 0,0 0,0 0);
+    }
+    25% {
+        clip-path: polygon(0 85%,100% 85%,100% 70%,0 70%);
+    }
+    30% {
+        transform: translate(-80px,0)
+    }
+    30.1% {
+        clip-path: polygon(0 0,0 0,0 0,0 0)
+    }
+    35% {
+        clip-path: polygon(0 63%,100% 63%,100% 80%,0 80%);
+    }
+    40% {
+        transform: translate(80px)
+    }
+    45% {
+        transform: translate(-80px)
+    }
+    50% {
+        transform: translate(0)
+    }
+    55% {
+        clip-path: polygon(0 10%,100% 10%,100% 0,0 0);
+        transform: translate(80px,0)
+    }
+    60.1% {
+        clip-path: polygon(0 0,100% 0,100% 100%, 0 100%);
+        transform: translate(0, 0);
+    }
+}
 @keyframes nightcity {
     0% {
         background-position: left;
@@ -145,7 +205,6 @@
     font-family: 'blender';
     src: url('fonts/blenderprobold.otf') format('truetype');
 }
-
 @font-face {
     font-family: 'blenderl';
     src: url('fonts/BlenderPro-Book.woff2') format('truetype');
@@ -377,10 +436,8 @@ nav > ul > li:nth-child(1):hover ~ .canto{
     width: 20rem;
     height: 30vh;
     display: flex;
-    flex-direction: column;
+    align-items: center;
     background-color: rgba(0, 0, 0, 0.8);
-    margin: auto;
-    margin-left: 0;
     clip-path: polygon(
         0 0,
         calc(100% - 20px) 0,
@@ -393,19 +450,58 @@ nav > ul > li:nth-child(1):hover ~ .canto{
     z-index: 1;
     transition: .5s;
 }
+.selecionar > div > .esquerda {
+    display: flex;
+    flex-direction: column;
+    height: 33rem;
+    width: 29rem;
+    position: relative;
+}
+.selecionar > div > .esquerda::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: inherit;
+    background-color: var(--cor-amarelo);
+    clip-path: polygon(
+        calc(100% - 1px) 6rem,
+        100% 6rem,
+        100% calc(100% - 6rem),
+        calc(100% - 1px) calc(100% - 6rem)
+    );
+}
+.selecionar > div > p {
+    color: white;
+    font-family: 'blenderl', Arial, Helvetica, sans-serif;
+    padding: 2.5rem;
+    margin-left: 3rem;
+    font-size: 1.9rem;
+    display: none;
+    text-align: justify;
+}
 .selecionar > div:hover {
     width: 70rem;
     height: 33rem;
     transition: 1s;
     z-index: 1;
 }
+.selecionar > div:hover > p {
+    animation: glitchc .7s ;
+    animation-iteration-count: unset;
+    display: block;
+}
 .selecionar > div:hover img {
-    width: 40rem;
-    height: 10rem;
+    width: 24rem;
+    height: 6rem;
+    margin: 6rem 0 0 3rem;
     transition: 1s;
 }
 .selecionar > div:hover .bb {
-    display: inline-block;
+    width: 10rem;
+    opacity: 1;
+    transition: 1s;
 }
 .selecionar > div::before {
     content: "";
@@ -440,8 +536,7 @@ nav > ul > li:nth-child(1):hover ~ .canto{
 }
 .bb {
     padding: 1.4rem 5.4rem;
-    margin: auto;
-    margin-top: 5vh;  
+    margin: 8rem 0 0 4rem;
     position: relative;
     color: black;
     font-size: 2rem;
@@ -451,13 +546,15 @@ nav > ul > li:nth-child(1):hover ~ .canto{
     background-size: contain;
     text-decoration: none;
     list-style: none;
-    display: none;
+    display: inline-block;
+    opacity: 0;
 }
 .bb span {
     animation: glitch 3.5s linear infinite;
     top: 0;
     left: 0;
     padding: inherit;
+    width: inherit;
     position: absolute;
     color: inherit;
     font-size: inherit;
