@@ -374,8 +374,8 @@ nav > ul > li:nth-child(1):hover ~ .canto{
     margin: 10vh auto 10vh 0;
 }
 .selecionar > div {
-    width: 25rem;
-    height: 20vh;
+    width: 20rem;
+    height: 30vh;
     display: flex;
     flex-direction: column;
     background-color: rgba(0, 0, 0, 0.8);
@@ -390,11 +390,12 @@ nav > ul > li:nth-child(1):hover ~ .canto{
         0 100%
     );
     position: relative;
+    z-index: 1;
     transition: .5s;
 }
 .selecionar > div:hover {
     width: 70rem;
-    height: 50rem;
+    height: 33rem;
     transition: 1s;
     z-index: 1;
 }
@@ -432,8 +433,8 @@ nav > ul > li:nth-child(1):hover ~ .canto{
     background-color: var(--cor-amarelo);
 }
 .selecionar > div img {
-    width: 20rem;
-    height: 5rem;
+    width: 16rem;
+    height: 4rem;
     margin: auto;
     display: block;
 }
@@ -671,16 +672,23 @@ main {
     z-index: -2;
 }
 #conteudo .loading {
-    height: 10rem;
-    width: 20rem;
+    height: 10vh;
+    width: 28vh;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 3rem;
     color: black;
     background-color: var(--cor-amarelo);
+    clip-path: polygon(
+        0 0,
+        calc(100% - 20px) 0,
+        100% 20px,
+        100% 100%,
+        0 100%
+    );
     position: absolute;
-    top: -10rem;
+    top: -10vh;
 }
 
 /* introducao */
