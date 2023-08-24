@@ -145,34 +145,66 @@
         transform: translate(0, 0);
     }
 }
-@keyframes nightcity {
-    0% {
-        background-position: left;
-        animation-delay: 5s;
-        background-image: url(img/nightcity.webp);
+@keyframes abrir {
+    from {
+        height: 2rem;
+        width: 0;
+        padding: 3rem 0;
+        left: 0;
     }
-    30% {
-        background-image: url(img/nightcity.jpg);
-        background-position: right;
-        animation-delay: 5s;
-        opacity: 0.9;
-    }
-    50% {
-        opacity: 1;
-        background-image: url(img/nightcity.jpg);
-        background-position: right;
-        animation-delay: 5s;
-    }
-    80% {
-        background-image: url(img/nightcity.webp);
-        background-position: left;
-        animation-delay: 5s;
-        opacity: 0.9;
+    70% {
+        height: 2rem;
+        width: 35rem;
+        padding: 3rem;
+        left: calc(-41rem + 2px);
     }
     to {
-        background-image: url(img/nightcity.webp);
-        background-position: left;
+        height: 40rem;
+        width: 35rem;
+    }
+}
+@keyframes txtnc {
+    from {
+        opacity: 0;
+    }
+    50%{
+        opacity: 0;
+    }
+    50.1% {
         opacity: 1;
+    }
+    50.2% {
+        clip-path: polygon(0 2%,100% 2%,100% 5%,0 5%);
+    }
+    52% {
+        clip-path: polygon(0 98%,100% 98%,100% 100%,0 100%);
+        transform: translate(-80px)
+    }
+    56% {
+        transform: translate(80px)
+    }
+    58% {
+        transform: translate(-80px)
+    }
+    59% {
+        transform: translate(0)
+    }
+    60% {
+        clip-path: polygon(0 54%,100% 54%,100% 44%,0 44%);
+        transform: translate(80px,0)
+    }
+    63.1% {
+        clip-path: polygon(0 0,0 0,0 0,0 0);
+    }
+    65% {
+        clip-path: polygon(0 60%,100% 60%,100% 50%,0 50%);
+    }
+    70.1% {
+        clip-path: polygon(0 0,0 0,0 0,0 0);
+    }
+    75% {
+        clip-path: polygon(0 0,100% 0,100% 100%, 0 100%);
+        transform: translate(0, 0);
     }
 }
 
@@ -207,7 +239,7 @@ body {
 /* Cabeçalho */
 
 header {
-    background-image: url(img/back-edgerunners.jpg);
+    background-image: url(img/back-2077.jpg);
     background-position: center;
     background-size: cover;
     height: 100vh;
@@ -602,7 +634,7 @@ nav > ul > li:nth-child(1):hover ~ .canto{
         0 calc(100% - 20px),
         0 20px,
         20px 0);
-    background-image: url(img/nightcity.jpg);
+    background-image: url(img/estilo-cyberpunk.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -710,18 +742,56 @@ nav > ul > li:nth-child(1):hover ~ .canto{
 #lateral .textonightcity {
     height: 40rem;
     width: 35rem;
+    padding: 3rem;
     position: absolute;
-    top: 10rem;
-    left: -35rem;
-    background-color: blue;
+    top: 5rem;
+    left: calc(-41rem + 2px);
+    text-align: justify;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.8);
     font-size: 2rem;
     font-family: 'blenderl', Arial, Helvetica, sans-serif;
+    clip-path: polygon(
+        0 0,
+        calc(100% - 20px) 0,
+        100% 20px,
+        100% 100%,
+        20px 100%,
+        0 calc(100% - 20px)
+    );
+    transition: .5s;
     opacity: 0;
+    z-index: 1;
+}
+.textonightcity::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: inherit;
+    width: inherit;
+    padding: inherit;
+    background-color: var(--cor-vermelho);
+    clip-path: polygon(
+        0 0,
+        calc(100% - 20px) 0,
+        100% 20px,
+        100% 100%,
+        20px 100%,
+        0 calc(100% - 20px),
+        0 0,
+        2px 2px,
+        2px calc(100% - 21.5px),
+        21.5px calc(100% - 2px),
+        calc(100% - 2px) calc(100% - 2px),
+        calc(100% - 2px) 21.5px,
+        calc(100% - 21.5px) 2px,
+        2px 2px);
 }
 
 #lateral:hover {
     clip-path: none;
-    width: 90vh;
+    width: 80vh;
     transition: .7s;
 }
 #lateral:hover h1 {
@@ -749,7 +819,11 @@ nav > ul > li:nth-child(1):hover ~ .canto{
     opacity: 1;
 }
 #lateral:hover .textonightcity {
+    animation: abrir .8s ease-in-out;
     opacity: 1;
+}
+#lateral:hover .textonightcity p {
+    animation: txtnc 1.2s ease-in-out;
 }
 
 /* Conteudo */
@@ -784,6 +858,18 @@ main {
     );
     position: absolute;
     top: -10vh;
+}
+#conteudo .loading span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: inherit;
+    width: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--cor-amarelo);
+    animation: glitch 3s infinite;
 }
 
 /* introducao */
@@ -1014,8 +1100,34 @@ main {
     display: block;
     opacity: 1;
 }
+
+#grid div:nth-child(1) .texto {
+    height: 26rem;
+}
+#grid div:nth-child(2) .texto {
+    height: 30rem;
+}
+#grid div:nth-child(3) .texto {
+    height: 26rem;
+}
+#grid div:nth-child(4) .texto {
+    height: 16rem;
+}
+#grid div:nth-child(5) .texto2 {
+    height: 21rem;
+}
+#grid div:nth-child(6) .texto2 {
+    height: 21rem;
+}
+#grid div:nth-child(7) .texto2 {
+    height: 23rem;
+}
+#grid div:nth-child(8) .texto2 {
+    height: 33rem;
+}
 /* Roda pé */
 
 footer {
     height: 50rem;
+    background-color: rgb(39, 39, 39);
 }
