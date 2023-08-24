@@ -463,8 +463,6 @@ nav > ul > li:nth-child(1):hover ~ .canto{
     z-index: 1;
 }
 .selecionar > div:hover > p {
-    animation: glitchc .7s ;
-    animation-iteration-count: unset;
     display: block;
 }
 .selecionar > div:hover img {
@@ -557,15 +555,13 @@ nav > ul > li:nth-child(1):hover ~ .canto{
     margin-top: 20px;
     font-family: 'blender', Arial, Helvetica, sans-serif;
     clip-path: polygon(
-        20px 0,
+        0 0,
         100% 0,
         100% 100%,
-        20px 100%,
-        0 calc(100% - 20px),
-        0 20px);
+        0 100%
+    );
     transition: .3s;
     position: relative;
-    box-shadow: 1px 1px black;
 }
 #lateral::before {
     content: "";
@@ -589,6 +585,7 @@ nav > ul > li:nth-child(1):hover ~ .canto{
         calc(100% - 2px) calc(100% - 2px),
         calc(100% - 2px) 2px,
         21.5px 2px);
+    z-index: 2;
 }
 #lateral::after {
     content: "";
@@ -605,14 +602,126 @@ nav > ul > li:nth-child(1):hover ~ .canto{
         0 calc(100% - 20px),
         0 20px,
         20px 0);
-    animation: nightcity 10s infinite;
+    background-image: url(img/nightcity.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    z-index: -1;
+    z-index: 1;
 }
+#lateral h1 {
+    font-family: 'blender', Arial, Helvetica, sans-serif;
+    font-size: 5vh;
+    color: white;
+    text-align: center;
+    height: 10vh;
+    width: 20vh;
+    margin: auto;
+    margin-top: 10vh;
+    position: relative;
+    line-height: 5vh;
+    z-index: 2;
+}
+#lateral h1::before {
+    content: "";
+    position: absolute;
+    height: inherit;
+    width: inherit;
+    top: 0;
+    left: 0;
+    background-color: var(--cor-vermelho);
+    clip-path: polygon(
+        3rem 0,
+        calc(100% - 3rem) 0,
+        calc(100% - 3rem) 1px,
+        3rem 1px,
+        3rem 0,
+
+        3rem calc(100% - 1px),
+        calc(100% - 3rem) calc(100% - 1px),
+        calc(100% - 3rem) 100%,
+        3rem 100%
+    );
+    z-index: inherit;
+}
+#lateral a {
+    display: block;
+    color: var(--cor-ciano);
+    text-decoration: none;
+    width: 27vh;
+    height: 6vh;
+    margin: auto;
+    margin-top: 30vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    clip-path: polygon(3vh 0,
+    100% 0,
+    calc(100% - 3vh) 100%,
+    0 100%);
+    transition: .5s;
+    font-size: 1.8vh;
+    text-align: center;
+    position: relative;
+    line-height: 6vh;
+    opacity: 0;
+    z-index: 2;
+}
+#lateral a::before {
+    content: "";
+    position: absolute;
+    height: inherit;
+    width: inherit;
+    top: 0;
+    left: 0;
+    background-color: var(--cor-ciano);
+    clip-path: polygon(
+        5vh 0,
+        100% 0,
+        100% 100%,
+        0 100%,
+        0 calc(100% - 15px),
+        13px calc(100% - 2px),
+        100% calc(100% - 2px),
+        100% 15px,
+        calc(100% - 13px) 2px,
+        0 2px);
+    z-index: inherit;
+}
+#lateral a::after {
+    content: "";
+    position: absolute;
+    height: inherit;
+    width: inherit;
+    top: 0;
+    left: 0;
+    background-color: var(--cor-ciano);
+    clip-path: polygon(
+        5vh 2vh,
+        calc(5vh + 1px) 2vh,
+        calc(5vh + 1px) 4vh,
+        5vh 4vh,
+        5vh 2vh,
+        
+        calc(100% - 5vh - 1px) 2vh,
+        calc(100% - 5vh - 1px) 4vh,
+        calc(100% - 5vh) 4vh,
+        calc(100% - 5vh) 2vh);
+    opacity: 0;
+    z-index: inherit;
+}
+#lateral .textonightcity {
+    height: 40rem;
+    width: 35rem;
+    position: absolute;
+    top: 10rem;
+    left: -35rem;
+    background-color: blue;
+    font-size: 2rem;
+    font-family: 'blenderl', Arial, Helvetica, sans-serif;
+    opacity: 0;
+}
+
 #lateral:hover {
-    width: 40vh;
+    clip-path: none;
+    width: 90vh;
     transition: .7s;
 }
 #lateral:hover h1 {
@@ -639,99 +748,8 @@ nav > ul > li:nth-child(1):hover ~ .canto{
 #lateral:hover a::after {
     opacity: 1;
 }
-#lateral h1 {
-    font-family: 'blender', Arial, Helvetica, sans-serif;
-    font-size: 5vh;
-    color: white;
-    text-align: center;
-    height: 10vh;
-    width: 20vh;
-    margin: auto;
-    margin-top: 10vh;
-    position: relative;
-    line-height: 5vh;
-}
-#lateral h1::before {
-    content: "";
-    position: absolute;
-    height: inherit;
-    width: inherit;
-    top: 0;
-    left: 0;
-    background-color: var(--cor-vermelho);
-    clip-path: polygon(
-        3rem 0,
-        calc(100% - 3rem) 0,
-        calc(100% - 3rem) 1px,
-        3rem 1px,
-        3rem 0,
-
-        3rem calc(100% - 1px),
-        calc(100% - 3rem) calc(100% - 1px),
-        calc(100% - 3rem) 100%,
-        3rem 100%
-    );
-}
-#lateral a {
-    display: block;
-    color: var(--cor-ciano);
-    text-decoration: none;
-    width: 27vh;
-    height: 6vh;
-    margin: auto;
-    margin-top: 30vh;
-    background-color: rgba(0, 0, 0, 0.8);
-    clip-path: polygon(3vh 0,
-    100% 0,
-    calc(100% - 3vh) 100%,
-    0 100%);
-    transition: .5s;
-    font-size: 1.8vh;
-    text-align: center;
-    position: relative;
-    line-height: 6vh;
-    opacity: 0;
-}
-#lateral a::before {
-    content: "";
-    position: absolute;
-    height: inherit;
-    width: inherit;
-    top: 0;
-    left: 0;
-    background-color: var(--cor-ciano);
-    clip-path: polygon(
-        5vh 0,
-        100% 0,
-        100% 100%,
-        0 100%,
-        0 calc(100% - 15px),
-        13px calc(100% - 2px),
-        100% calc(100% - 2px),
-        100% 15px,
-        calc(100% - 13px) 2px,
-        0 2px);
-}
-#lateral a::after {
-    content: "";
-    position: absolute;
-    height: inherit;
-    width: inherit;
-    top: 0;
-    left: 0;
-    background-color: var(--cor-ciano);
-    clip-path: polygon(
-        5vh 2vh,
-        calc(5vh + 1px) 2vh,
-        calc(5vh + 1px) 4vh,
-        5vh 4vh,
-        5vh 2vh,
-        
-        calc(100% - 5vh - 1px) 2vh,
-        calc(100% - 5vh - 1px) 4vh,
-        calc(100% - 5vh) 4vh,
-        calc(100% - 5vh) 2vh);
-    opacity: 0;
+#lateral:hover .textonightcity {
+    opacity: 1;
 }
 
 /* Conteudo */
