@@ -440,17 +440,21 @@ nav > ul > li:nth-child(1):hover ~ .canto{
     margin: 10vh auto 10vh 0;
 }
 .selecionar > div {
-    width: 20rem;
+    width: 20.6rem;
     height: 30vh;
     display: flex;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.8);
     clip-path: polygon(
         0 0,
-        calc(100% - 20px) 0,
-        100% 20px,
-        100% calc(100% - 20px),
-        calc(100% - 20px) 100%,
+        calc(100% - 20px - .6rem) 0,
+        calc(100% - .6rem) 20px,
+        calc(100% - .6rem) calc(50% - 5rem),
+        100% calc(50% - 4rem),
+        100% calc(50% + 4rem),
+        calc(100% - .6rem) calc(50% + 5rem),
+        calc(100% - .6rem) calc(100% - 20px),
+        calc(100% - 20px - .6rem) 100%,
         0 100%
     );
     position: relative;
@@ -519,19 +523,31 @@ nav > ul > li:nth-child(1):hover ~ .canto{
     height: inherit;
     clip-path: polygon(
         0 0,
-        calc(100% - 20px) 0,
-        100% 20px,
-        100% calc(100% - 20px),
-        calc(100% - 20px) 100%,
+        calc(100% - 20px - .6rem) 0,
+        calc(100% - .6rem) 20px,
+        calc(100% - .6rem) calc(50% - 4.5rem),
+        100% calc(50% - 4rem),
+        100% calc(50% + 4rem),
+        calc(100% - .6rem) calc(50% + 4.5rem),
+        calc(100% - .6rem) calc(100% - 20px),
+        calc(100% - 20px - .6rem) 100%,
         0 100%,
         0 0,
         
         0 2px,
         0 calc(100% - 2px),
-        calc(100% - 21.5px) calc(100% - 2px),
-        calc(100% - 2px) calc(100% - 21.5px),
-        calc(100% - 2px) 21.5px,
-        calc(100% - 21.5px) 2px,
+        calc(100% - 21.5px - .6rem) calc(100% - 2px),
+        calc(100% - 2px - .6rem) calc(100% - 21.5px),
+
+        calc(100% - 2px - .6rem) calc(50% + 3rem),
+        calc(100% - .4rem) calc(50% + 3rem),
+        calc(100% - .4rem) calc(50% - 3rem),
+        calc(100% - .6rem) calc(50% - 3rem),
+        calc(100% - .6rem) calc(50% + 3rem),
+        calc(100% - 2px - .6rem) calc(50% + 3rem),
+
+        calc(100% - 2px - .6rem) 21.5px,
+        calc(100% - 21.5px - .6rem) 2px,
         0 2px);
     background-color: var(--cor-amarelo);
 }
@@ -676,11 +692,11 @@ nav > ul > li:nth-child(1):hover ~ .canto{
     z-index: inherit;
 }
 #lateral a {
-    display: block;
+    display: flex;
     color: var(--cor-ciano);
     text-decoration: none;
-    width: 27vh;
-    height: 6vh;
+    width: 20rem;
+    height: 4rem;
     margin: auto;
     margin-top: 30vh;
     background-color: rgba(0, 0, 0, 0.8);
@@ -689,10 +705,11 @@ nav > ul > li:nth-child(1):hover ~ .canto{
     calc(100% - 3vh) 100%,
     0 100%);
     transition: .5s;
-    font-size: 1.8vh;
+    font-size: 1.5rem;
     text-align: center;
+    justify-content: center;
     position: relative;
-    line-height: 6vh;
+    line-height: 4rem;
     opacity: 0;
     z-index: 2;
 }
@@ -726,16 +743,17 @@ nav > ul > li:nth-child(1):hover ~ .canto{
     left: 0;
     background-color: var(--cor-ciano);
     clip-path: polygon(
-        5vh 2vh,
-        calc(5vh + 1px) 2vh,
-        calc(5vh + 1px) 4vh,
-        5vh 4vh,
-        5vh 2vh,
+        5vh 1rem,
+        calc(5vh + 1px) 1rem,
+        calc(5vh + 1px) calc(100% - 1rem),
+        5vh calc(100% - 1rem),
+        5vh 1rem,
         
-        calc(100% - 5vh - 1px) 2vh,
-        calc(100% - 5vh - 1px) 4vh,
-        calc(100% - 5vh) 4vh,
-        calc(100% - 5vh) 2vh);
+        calc(100% - 5vh - 1px) 1rem,
+        calc(100% - 5vh - 1px) calc(100% - 1rem),
+        calc(100% - 5vh) calc(100% - 1rem),
+        calc(100% - 5vh) 1rem
+    );
     opacity: 0;
     z-index: inherit;
 }
