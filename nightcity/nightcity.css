@@ -192,10 +192,12 @@ nav > ul > li:hover  ul{
 
 .flex {
     display: flex;
+    height: 100%;
+    align-items: center;
 }
 .texto-nightcity {
     width: 35rem;
-    margin: 5rem 10rem;
+    margin: 0 10vw;
     color: white;
     text-align: center;
     font-family: 'blenderl', Arial, Helvetica, sans-serif;
