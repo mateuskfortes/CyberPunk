@@ -193,11 +193,10 @@ nav > ul > li:hover  ul{
 .flex {
     display: flex;
     height: 100%;
-    align-items: center;
 }
 .texto-nightcity {
     width: 35rem;
-    margin: 0 10vw;
+    margin: 10vh 10vw;
     color: white;
     text-align: center;
     font-family: 'blenderl', Arial, Helvetica, sans-serif;
@@ -219,4 +218,56 @@ nav > ul > li:hover  ul{
 main {
     height: 100vh;
     background-color: var(--cor-roxo-escuro);
+}
+
+/* gangues */
+
+.gangues {
+    height: 40rem;
+    width: 100rem;
+    margin-left: 4rem;
+}
+.gangues > h1 {
+    padding: 1rem 0;
+    color: var(--cor-roxo-claro);
+    font-family: 'blender', Arial, Helvetica, sans-serif;
+    font-size: 4rem;
+    position: relative;
+}
+.gangues > h1::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--cor-roxo-claro);
+    height: 5rem;
+    width: calc(100vw - 8rem);
+    clip-path: polygon(
+        0 0,
+        55rem 0,
+        65rem calc(100% - 2px),
+        100% calc(100% - 2px),
+        100% 100%,
+        64.85rem 100%,
+        54.85rem 2px,
+        0 2px
+    );
+}
+.gangues .conteudo > h1 {
+    margin: 2.5rem 1rem;
+    color: var(--cor-vermelho);
+    font-family: 'blenderl', Arial, Helvetica, sans-serif;
+    font-size: 2.8rem;
+}
+.gangues .ft {
+    display: flex;
+}
+.gangues .display {
+    margin: 3rem 0 0 0;
+    height: 33.75rem;
+    width: 60rem;
+    border: 2px solid var(--cor-vermelho);
+    background-image: url(../img/gangues/6th-Street.webp);
+    background-size: cover;
+    background-position: center;
 }
