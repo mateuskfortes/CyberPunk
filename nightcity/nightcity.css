@@ -223,8 +223,8 @@ main {
 /* gangues */
 
 .gangues {
-    height: 40rem;
-    width: 100rem;
+    display: flex;
+    flex-direction: column;
     margin-left: 4rem;
 }
 .gangues > h1 {
@@ -262,12 +262,22 @@ main {
 .gangues .ft {
     display: flex;
 }
-.gangues .display {
+.gangues .ft .display {
     margin: 3rem 0 0 0;
     height: 33.75rem;
-    width: 60rem;
+    min-width: 60rem;
     border: 2px solid var(--cor-vermelho);
     background-image: url(../img/gangues/6th-Street.webp);
     background-size: cover;
     background-position: center;
+}
+.gangues .ft p {
+    width: 60rem;
+    padding: 1rem;
+    margin: 1rem 10rem;
+    font-size: 2rem;
+    font-family: 'blenderl', Arial, Helvetica, sans-serif;
+    text-align: justify;
+    color: var(--cor-vermelho);
+    position: relative;
 }
